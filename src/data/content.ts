@@ -92,10 +92,30 @@ export const authorBio = {
 
 // EDIT: Replace formats and prices
 export const formats = [
-  { name: "Hardcover", detail: "Lorem ipsum dolor sit amet, consectetur.", price: "£24.00" },
-  { name: "Paperback", detail: "Sed do eiusmod tempor incididunt ut labore.", price: "£12.00" },
-  { name: "eBook", detail: "Ut enim ad minim veniam quis nostrud.", price: "£6.99" },
-  { name: "Audiobook", detail: "Duis aute irure dolor in reprehenderit.", price: "£16.00" },
+  {
+    name: "Hardcover",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada.",
+    price: "£24.00",
+  },
+  {
+    name: "Paperback",
+    detail:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    price: "£12.00",
+  },
+  {
+    name: "eBook",
+    detail:
+      "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa.",
+    price: "£6.99",
+  },
+  {
+    name: "Audiobook",
+    detail:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste natus error sit voluptatem.",
+    price: "£16.00",
+  },
 ];
 
 // EDIT: Replace testimonials
