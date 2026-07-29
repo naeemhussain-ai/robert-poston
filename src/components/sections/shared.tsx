@@ -18,11 +18,10 @@ import { Button } from "@/components/ui/button";
 import { books, formats } from "@/data/content";
 import { cn } from "@/lib/utils";
 import bookHero from "@/assets/book-hero.jpg";
-import book1 from "@/assets/book-collection-1.jpg";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = [book1, book2, book3];
+const bookImages = ["/spirit-of-love.jpg", book2, book3];
 
 const formatIcons = [BookMarked, BookOpen, Tablet, Headphones];
 

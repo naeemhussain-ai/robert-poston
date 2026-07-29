@@ -3,11 +3,10 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Magnetic, Orbs, Particles, Reveal, Section, SectionHeading } from "@/components/lux";
 import { Button } from "@/components/ui/button";
 import { books } from "@/data/content";
-import book1 from "@/assets/book-collection-1.jpg";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = [book1, book2, book3];
+const bookImages = ["/spirit-of-love.jpg", book2, book3];
 
 export const Route = createFileRoute("/books/$slug")({
   loader: ({ params: { slug } }) => {
