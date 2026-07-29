@@ -9,7 +9,7 @@ const icons = [Instagram, Facebook, Music2, BookOpen];
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden border-t border-border bg-midnight px-6 pb-12 pt-24">
+    <footer className="surface-midnight relative overflow-hidden border-t border-border px-6 pb-12 pt-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-70"

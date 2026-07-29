@@ -6,8 +6,9 @@
 
 /*
  * "The Spirit of Love" — luxury editorial design system.
- * Base surface is Midnight Navy; ivory/pearl surfaces are opt-in per section
- * via the .surface-ivory / .surface-pearl utilities which re-map the tokens.
+ * Base surface is ivory/cream (light); midnight navy is opt-in per section
+ * via the .surface-midnight utility which re-maps the tokens for
+ * hero sections, footer, CTA banners, and quote blocks.
  */
 
 @theme inline {
@@ -65,17 +66,17 @@
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.19 0.032 260);
-  --foreground: oklch(0.972 0.008 85);
-  --card: oklch(0.24 0.038 263);
+  --background: oklch(0.99 0.004 85);
+  --foreground: oklch(0.18 0.03 260);
+  --card: oklch(0.19 0.032 260);
   --card-foreground: oklch(0.972 0.008 85);
-  --popover: oklch(0.22 0.036 262);
+  --popover: oklch(0.19 0.032 260);
   --popover-foreground: oklch(0.972 0.008 85);
   --primary: oklch(0.82 0.086 84);
   --primary-foreground: oklch(0.19 0.032 260);
-  --secondary: oklch(0.27 0.045 265);
+  --secondary: oklch(0.23 0.035 262);
   --secondary-foreground: oklch(0.972 0.008 85);
-  --muted: oklch(0.27 0.045 265);
+  --muted: oklch(0.23 0.035 262);
   --muted-foreground: oklch(0.74 0.02 260);
   --accent: oklch(0.8 0.06 300);
   --accent-foreground: oklch(0.19 0.032 260);
@@ -83,15 +84,15 @@
   --destructive-foreground: oklch(0.98 0.005 240);
   --border: oklch(0.99 0 0 / 12%);
   --input: oklch(0.99 0 0 / 16%);
-  --ring: oklch(0.82 0.086 84 / 60%);
+  --ring: oklch(0.82 0.086 84 / 50%);
 
   --gradient-aurora: radial-gradient(
       60% 55% at 20% 20%,
-      oklch(0.45 0.09 300 / 0.35),
+      oklch(0.55 0.14 300 / 0.25),
       transparent 70%
     ),
-    radial-gradient(50% 50% at 85% 15%, oklch(0.5 0.08 235 / 0.32), transparent 70%),
-    radial-gradient(70% 60% at 60% 95%, oklch(0.45 0.06 84 / 0.22), transparent 70%);
+    radial-gradient(50% 50% at 85% 15%, oklch(0.6 0.12 235 / 0.22), transparent 70%),
+    radial-gradient(70% 60% at 60% 95%, oklch(0.55 0.1 84 / 0.18), transparent 70%);
   --gradient-midnight: linear-gradient(
     180deg,
     oklch(0.16 0.03 260),
@@ -104,8 +105,8 @@
     oklch(0.82 0.086 84) 45%,
     oklch(0.95 0.03 92)
   );
-  --shadow-lux: 0 40px 90px -40px oklch(0.1 0.03 260 / 0.85);
-  --shadow-glow: 0 0 120px -20px oklch(0.82 0.086 84 / 0.35);
+  --shadow-lux: 0 30px 80px -30px oklch(0.18 0.03 260 / 0.12);
+  --shadow-glow: 0 0 100px -10px oklch(0.82 0.086 84 / 0.2);
   --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -143,11 +144,38 @@
   color: var(--foreground);
 }
 
+.surface-midnight {
+  --background: oklch(0.19 0.032 260);
+  --foreground: oklch(0.972 0.008 85);
+  --card: oklch(0.24 0.038 263);
+  --card-foreground: oklch(0.972 0.008 85);
+  --muted: oklch(0.27 0.045 265);
+  --muted-foreground: oklch(0.74 0.02 260);
+  --secondary: oklch(0.27 0.045 265);
+  --secondary-foreground: oklch(0.972 0.008 85);
+  --primary: oklch(0.82 0.086 84);
+  --primary-foreground: oklch(0.19 0.032 260);
+  --border: oklch(0.99 0 0 / 12%);
+  --input: oklch(0.99 0 0 / 16%);
+  --shadow-lux: 0 40px 90px -40px oklch(0.1 0.03 260 / 0.85);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 @utility glass {
-  background: color-mix(in oklab, var(--card) 55%, transparent);
-  backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid color-mix(in oklab, var(--foreground) 12%, transparent);
-  box-shadow: var(--shadow-lux);
+  --card-text: var(--card-foreground);
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, oklch(0.99 0 0) 12%, transparent);
+  box-shadow: 0 25px 70px -30px oklch(0.1 0.03 260 / 0.35);
+  color: var(--card-text);
+}
+
+@utility glass-blue {
+  --card-text: var(--card-foreground);
+  background: linear-gradient(135deg, oklch(0.22 0.04 265), var(--card));
+  border: 1px solid color-mix(in oklab, oklch(0.5 0.1 265) 30%, transparent);
+  box-shadow: 0 25px 70px -30px oklch(0.15 0.04 265 / 0.4);
+  color: var(--card-text);
 }
 
 @utility text-gold-gradient {
@@ -164,7 +192,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.32;
+    opacity: 0.25;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }

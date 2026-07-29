@@ -30,7 +30,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-700",
         scrolled
-          ? "border-b border-border/60 bg-midnight/70 backdrop-blur-xl backdrop-saturate-150"
+          ? "bg-white/75 border-b border-border/60 shadow-sm backdrop-blur-xl"
           : "bg-transparent",
       )}
     >
@@ -41,10 +41,11 @@ export function SiteHeader() {
         )}
       >
         <Link to="/" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-[0.65rem] tracking-[0.2em] text-gold transition-colors duration-500 group-hover:bg-gold/10">
-            {site.monogram}
-          </span>
-          <span className="display hidden text-lg tracking-wide sm:block">{site.author}</span>
+          <img
+            src={scrolled ? "/Stella Denise Solano - Logo Design.png" : "/Stella Denise Solano - Logo Design - 02.png"}
+            alt={site.author}
+            className="h-14 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -54,7 +55,11 @@ export function SiteHeader() {
               to={item.to}
               className={cn(
                 "lux-underline text-[0.7rem] uppercase tracking-[0.28em] transition-colors duration-500",
-                pathname === item.to ? "text-gold" : "text-foreground/70 hover:text-foreground",
+                pathname === item.to
+                  ? "text-gold"
+                  : scrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : "text-white/70 hover:text-white",
               )}
             >
               {item.label}
@@ -73,12 +78,15 @@ export function SiteHeader() {
             <SheetTrigger asChild>
               <button
                 aria-label="Open menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full border md:hidden",
+                  scrolled ? "border-border text-foreground" : "border-white/30 text-white",
+                )}
               >
                 <Menu className="h-4 w-4" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[86vw] border-border bg-midnight px-8 sm:w-96">
+            <SheetContent side="right" className="w-[86vw] border-border surface-ivory px-8 sm:w-96">
               <AnimatePresence>
                 {open ? (
                   <motion.nav

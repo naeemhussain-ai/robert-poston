@@ -14,6 +14,7 @@ import {
   WordReveal,
 } from "@/components/lux";
 import {
+  BookCollectionSection,
   BookMockup,
   CtaBanner,
   FormatsSection,
@@ -54,7 +55,7 @@ export const Route = createFileRoute("/book")({
 
 function BookHero() {
   return (
-    <section className="grain relative overflow-hidden px-6 pb-24 pt-40">
+    <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-40">
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
       <Particles />
@@ -129,7 +130,7 @@ function Themes() {
       <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
         {themes.slice(0, 3).map((t, i) => (
           <StaggerItem key={t.title}>
-            <div className="glass h-full rounded-3xl p-10 transition-transform duration-700 hover:-translate-y-2">
+            <div className="glass-blue h-full rounded-3xl p-10 transition-transform duration-700 hover:-translate-y-2">
               <span className="display text-sm tracking-[0.3em] text-gold">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -151,7 +152,7 @@ function Chapters() {
       <Stagger className="mt-20 grid gap-6 sm:grid-cols-2">
         {chapters.map((c) => (
           <StaggerItem key={c.number}>
-            <article className="group h-full rounded-3xl border border-border p-10 transition-all duration-700 hover:-translate-y-1 hover:border-gold/50">
+            <article className="group h-full rounded-3xl border border-border bg-card p-10 text-card-foreground transition-all duration-700 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
               <p className="eyebrow">{c.number}</p>
               <h3 className="display mt-5 text-4xl">{c.title}</h3>
               <div className="hairline my-6" />
@@ -222,6 +223,7 @@ function BookPage() {
       <Synopsis />
       <Themes />
       <FormatsSection eyebrow="Formats" title="Every way to hold the story" />
+      <BookCollectionSection eyebrow="Works" title="More from the author" />
       <Chapters />
       <GallerySection
         eyebrow="Atmosphere"

@@ -16,6 +16,7 @@ import {
   WordReveal,
 } from "@/components/lux";
 import {
+  BookCollectionSection,
   BookMockup,
   CtaBanner,
   FormatsSection,
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/")({
 function Hero() {
   const reduce = useReducedMotion();
   return (
-    <section className="relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
+    <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -188,7 +189,7 @@ function Themes() {
       <Stagger className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {themes.map((t, i) => (
           <StaggerItem key={t.title}>
-            <div className="glass group h-full rounded-3xl p-9 transition-transform duration-700 hover:-translate-y-2">
+            <div className="glass-blue group h-full rounded-3xl p-9 transition-transform duration-700 hover:-translate-y-2">
               <span className="display text-sm tracking-[0.3em] text-gold">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -322,7 +323,7 @@ function Newsletter() {
   return (
     <Section className="bg-background">
       <Orbs className="opacity-70" />
-      <Reveal className="glass relative mx-auto max-w-3xl rounded-[2rem] p-10 text-center sm:p-16">
+      <Reveal className="glass-blue relative mx-auto max-w-3xl rounded-[2rem] p-10 text-center sm:p-16">
         <GoldDivider className="mb-10 max-w-[10rem]" />
         <h2 className="display text-4xl sm:text-5xl">Join the Reader Circle</h2>
         {/* EDIT: Replace newsletter copy */}
@@ -355,6 +356,7 @@ function Home() {
       <Introduction />
       <QuoteBlock text={featuredQuote.text} attribution={featuredQuote.attribution} />
       <AuthorPreview />
+      <BookCollectionSection />
       <FormatsSection />
       <Testimonials />
       <TimelineSection eyebrow="Reader Journey" title="Four movements of the story" items={journey} />

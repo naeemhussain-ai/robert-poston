@@ -191,3 +191,46 @@ export const reviews = [
 ];
 
 export const genres = ["Literary Fiction", "Spiritual", "Romance", "Contemporary"];
+
+// EDIT: Replace with real collection titles
+export const books = [
+  {
+    title: "The Spirit of Love",
+    slug: "the-spirit-of-love",
+    year: "2024",
+    tag: "A Novel",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tortor sed velit tempus laoreet.",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tortor sed velit tempus laoreet. Sed non quam nec nunc gravida tincidunt. Nullam nec nunc nec nunc ultricies ultricies. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec velit justo, consectetur nec, ultricies nec, ultricies nec, nunc. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit justo, consectetur nec, ultricies nec, ultricies nec, nunc. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc. Nullam nec nunc nec nunc ultricies ultricies.",
+    ],
+    amazonLink: "https://www.amazon.com/dp/example1",
+  },
+  {
+    title: "Whispers of the Heart",
+    slug: "whispers-of-the-heart",
+    year: "2021",
+    tag: "A Novella",
+    body: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec velit.",
+    description: [
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit justo, consectetur nec, ultricies nec, ultricies nec, nunc. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non quam nec nunc gravida tincidunt. Nullam nec nunc nec nunc ultricies ultricies. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tortor sed velit tempus laoreet. Donec velit justo, consectetur nec, ultricies nec, ultricies nec, nunc. Nullam nec nunc nec nunc ultricies ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+    ],
+    amazonLink: "https://www.amazon.com/dp/example2",
+  },
+  {
+    title: "Letters to Tomorrow",
+    slug: "letters-to-tomorrow",
+    year: "2018",
+    tag: "Short Stories",
+    body: "Integer sit amet lacus vel arcu tincidunt facilisis. Nulla facilisi. Sed vehicula magna quis nibh.",
+    description: [
+      "Integer sit amet lacus vel arcu tincidunt facilisis. Nulla facilisi. Sed vehicula magna quis nibh. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam nec nunc nec nunc ultricies ultricies. Sed auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tortor sed velit tempus laoreet. Donec velit justo, consectetur nec, ultricies nec, ultricies nec, nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+    ],
+    amazonLink: "https://www.amazon.com/dp/example3",
+  },
+];

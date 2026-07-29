@@ -196,7 +196,7 @@ function ContactForm() {
 function Contact() {
   return (
     <>
-      <section className="grain relative overflow-hidden px-6 pb-20 pt-44 text-center">
+      <section className="surface-midnight grain relative overflow-hidden px-6 pb-20 pt-44 text-center">
         <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
         <Particles />
         <div className="relative z-10 mx-auto max-w-2xl">
@@ -257,7 +257,7 @@ function Contact() {
 
       <Section className="bg-background">
         <Botanical className="left-1/2 top-10 hidden h-[26rem] w-[26rem] -translate-x-1/2 lg:block" />
-        <Reveal className="glass relative mx-auto max-w-3xl rounded-[2rem] p-12 text-center">
+        <Reveal className="glass-blue relative mx-auto max-w-3xl rounded-[2rem] p-12 text-center">
           <MapPin className="mx-auto h-5 w-5 text-gold" />
           <h2 className="display mt-8 text-4xl">Written from a quiet corner of the world</h2>
           {/* EDIT: Replace location placeholder */}

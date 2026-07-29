@@ -54,7 +54,7 @@ const gallery = [
 
 function AboutHero() {
   return (
-    <section className="grain relative overflow-hidden px-6 pb-24 pt-44">
+    <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-44">
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
       <Particles />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-14 lg:grid-cols-[1.1fr_0.9fr]">
@@ -116,7 +116,7 @@ function Philosophy() {
       <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
         {philosophy.map((p) => (
           <StaggerItem key={p.title}>
-            <div className="glass h-full rounded-3xl p-10 transition-transform duration-700 hover:-translate-y-2">
+            <div className="glass-blue h-full rounded-3xl p-10 transition-transform duration-700 hover:-translate-y-2">
               <h3 className="display text-3xl">{p.title}</h3>
               <div className="hairline my-6" />
               {/* EDIT: Replace philosophy copy */}
@@ -195,7 +195,7 @@ function Awards() {
       <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
         {awards.map((a) => (
           <StaggerItem key={a.title}>
-            <div className="h-full rounded-3xl border border-border p-10 transition-colors duration-700 hover:border-gold/50">
+            <div className="h-full rounded-3xl border border-border bg-card p-10 text-card-foreground transition-colors duration-700 hover:border-gold/50 hover:shadow-lg">
               <p className="eyebrow">{a.year}</p>
               <h3 className="display mt-5 text-3xl">{a.title}</h3>
               {/* EDIT: Replace award details */}
