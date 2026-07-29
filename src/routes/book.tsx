@@ -49,7 +49,7 @@ export const Route = createFileRoute("/book")({
       },
     ],
   }),
-  component: BookPage;
+  component: BookPage,
 });
 
 function BookHero() {
