@@ -62,9 +62,9 @@ function BookHero() {
         aria-hidden
         width={1920}
         height={1280}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-80"
       />
-      <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)" }} />
+      <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)", opacity: 0.7 }} />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
       <Particles />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-2">
