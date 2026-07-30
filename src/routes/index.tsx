@@ -37,6 +37,7 @@ import {
 } from "@/data/content";
 import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
+import heroSky from "@/assets/hero-sky.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,10 +62,22 @@ function Hero() {
   const reduce = useReducedMotion();
   return (
     <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
+      {/* Heavenly sky: clouds, light rays and distant angels */}
+      <img
+        src={heroSky}
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
-        style={{ background: "var(--gradient-midnight)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, oklch(0.19 0.032 260 / 0.92) 0%, oklch(0.19 0.032 260 / 0.72) 45%, oklch(0.19 0.032 260 / 0.35) 100%)",
+        }}
       />
       <div
         aria-hidden
@@ -73,7 +86,7 @@ function Hero() {
       />
       <Orbs />
       <Particles />
-      <Botanical className="left-[-6rem] top-24 hidden h-[28rem] w-[28rem] lg:block" />
+
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
