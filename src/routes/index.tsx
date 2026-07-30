@@ -37,6 +37,7 @@ import {
 } from "@/data/content";
 import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
+import heroSky from "@/assets/hero-sky.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
