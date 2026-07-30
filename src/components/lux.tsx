@@ -182,89 +182,117 @@ export function GoldDivider({ className }: { className?: string }) {
 }
 
 /**
- * Decorative heavenly motif: a soft angel silhouette drifting in wispy clouds
- * with gentle rays of light. Purely decorative, semi-transparent, never a focal point.
+ * Decorative heavenly motif: a couple of wispy angels flying through soft clouds
+ * and gentle rays of light. Purely decorative, semi-transparent, never a focal point.
  * (Replaces the previous botanical/foliage motif — same name, props and placement.)
  */
+function FlyingAngel({ soft }: { soft: string }) {
+  // Local coords, angel facing right, ascending. Kept loose and soft on purpose.
+  return (
+    <g filter={soft} fill="currentColor">
+      {/* far wing */}
+      <path d="M4 -6C-4 -22 -19 -32 -37 -34c12 11 19 23 21 36 1 8 5 12 11 12z" opacity="0.55" />
+      {/* trailing robe */}
+      <path d="M9 -4c5 2 7 8 4 14-6 12-19 22-38 29 9-12 14-24 16-35 1-7 8-11 18-8z" opacity="0.75" />
+      {/* head */}
+      <ellipse cx="12" cy="-9" rx="3.6" ry="4" opacity="0.85" />
+      {/* near wing */}
+      <path d="M7 -5C1 -24 -12 -37 -31 -43c10 13 15 27 16 41 0 8 5 11 12 8z" opacity="0.9" />
+      {/* light trail */}
+      <path d="M-16 16C-30 22 -44 25 -58 25c13 3 27 2 41-2z" opacity="0.35" />
+    </g>
+  );
+}
+
 export function Botanical({ className }: { className?: string }) {
   const reduce = useReducedMotion();
   const uid = useId().replace(/[:]/g, "");
+  const soft = `url(#soft-${uid})`;
+  const softer = `url(#softer-${uid})`;
+
   return (
     <motion.svg
       aria-hidden
       viewBox="0 0 200 200"
       className={cn("pointer-events-none absolute text-mist/40", className)}
       fill="none"
-      animate={reduce ? undefined : { y: [0, -14, 0], opacity: [0.75, 1, 0.75] }}
+      animate={reduce ? undefined : { opacity: [0.8, 1, 0.8] }}
       transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
     >
       <defs>
-        <radialGradient id={`glow-${uid}`} cx="50%" cy="38%" r="55%">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
-          <stop offset="60%" stopColor="currentColor" stopOpacity="0.12" />
+        <radialGradient id={`glow-${uid}`} cx="50%" cy="34%" r="58%">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.42" />
+          <stop offset="60%" stopColor="currentColor" stopOpacity="0.1" />
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
         <linearGradient id={`ray-${uid}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.28" />
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.24" />
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </linearGradient>
-        <linearGradient id={`veil-${uid}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.34" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0.04" />
-        </linearGradient>
-        <filter id={`soft-${uid}`} x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="2.4" />
+        <filter id={`soft-${uid}`} x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="2" />
         </filter>
-        <filter id={`softer-${uid}`} x="-40%" y="-40%" width="180%" height="180%">
+        <filter id={`softer-${uid}`} x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="4.5" />
         </filter>
       </defs>
 
       {/* heavenly haze */}
-      <circle cx="100" cy="80" r="86" fill={`url(#glow-${uid})`} />
+      <circle cx="100" cy="72" r="88" fill={`url(#glow-${uid})`} />
 
       {/* gentle rays of light */}
-      <g filter={`url(#softer-${uid})`} fill={`url(#ray-${uid})`}>
-        <path d="M100 26 78 190h14z" />
-        <path d="M100 26 108 190h13z" />
-        <path d="M100 26 132 182l12-6z" />
-        <path d="M100 26 68 182l-12-6z" />
+      <g filter={softer} fill={`url(#ray-${uid})`}>
+        <path d="M104 14 80 190h14z" />
+        <path d="M104 14 112 190h13z" />
+        <path d="M104 14 138 180l12-6z" />
+        <path d="M104 14 68 180l-12-6z" />
       </g>
 
-      {/* angel silhouette — wings, veil, halo */}
-      <g filter={`url(#soft-${uid})`} fill="currentColor">
-        <path
-          d="M98 68c-10-14-26-24-44-26 12 10 21 22 26 36 4 11 11 18 18 21z"
-          opacity="0.3"
-        />
-        <path
-          d="M102 68c10-14 26-24 44-26-12 10-21 22-26 36-4 11-11 18-18 21z"
-          opacity="0.3"
-        />
-        <ellipse cx="100" cy="52" rx="7" ry="8" opacity="0.34" />
-        <path d="M100 62c9 0 15 9 18 24 4 21 6 40 4 58-8 5-36 5-44 0-2-18 0-37 4-58 3-15 9-24 18-24z" fill={`url(#veil-${uid})`} />
-      </g>
-      <ellipse cx="100" cy="38" rx="11" ry="3.2" fill="none" stroke="currentColor" strokeOpacity="0.35" strokeWidth="0.8" />
+      {/* first angel, gliding upward */}
+      <motion.g
+        opacity="0.34"
+        animate={reduce ? undefined : { x: [0, 14, 0], y: [0, -12, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <g transform="translate(76 74) rotate(-16) scale(1.05)">
+          <FlyingAngel soft={soft} />
+        </g>
+      </motion.g>
 
-      {/* distant angels */}
-      <g filter={`url(#softer-${uid})`} fill="currentColor" opacity="0.16">
-        <path d="M36 118c-5-6-12-10-19-11 5 5 9 10 11 16 2 5 5 8 8 9zM38 118c4-6 11-10 18-11-5 5-8 10-10 16-2 5-5 8-8 9z" />
-        <ellipse cx="37" cy="112" rx="3" ry="3.4" />
-        <path d="M164 142c-4-5-10-9-16-10 4 4 8 9 9 14 2 4 4 7 7 8zM166 142c4-5 10-9 16-10-4 4-8 9-9 14-2 4-4 7-7 8z" />
-        <ellipse cx="165" cy="137" rx="2.6" ry="3" />
-      </g>
+      {/* second angel, further away and slightly behind */}
+      <motion.g
+        opacity="0.2"
+        animate={reduce ? undefined : { x: [0, -12, 0], y: [0, 10, 0] }}
+        transition={{ duration: 27, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      >
+        <g transform="translate(148 128) rotate(-8) scale(0.6)">
+          <FlyingAngel soft={softer} />
+        </g>
+      </motion.g>
+
+      {/* distant third angel, barely there */}
+      <motion.g
+        opacity="0.12"
+        animate={reduce ? undefined : { x: [0, 8, 0], y: [0, -7, 0] }}
+        transition={{ duration: 31, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+      >
+        <g transform="translate(42 148) rotate(-22) scale(0.42)">
+          <FlyingAngel soft={softer} />
+        </g>
+      </motion.g>
 
       {/* soft flowing clouds */}
-      <g filter={`url(#soft-${uid})`} fill="currentColor" opacity="0.2">
-        <ellipse cx="72" cy="164" rx="46" ry="13" />
-        <ellipse cx="126" cy="172" rx="52" ry="14" />
-        <ellipse cx="100" cy="150" rx="30" ry="9" opacity="0.7" />
-        <ellipse cx="46" cy="66" rx="26" ry="8" opacity="0.5" />
-        <ellipse cx="158" cy="88" rx="28" ry="8" opacity="0.5" />
+      <g filter={soft} fill="currentColor" opacity="0.18">
+        <ellipse cx="72" cy="168" rx="46" ry="13" />
+        <ellipse cx="128" cy="176" rx="52" ry="14" />
+        <ellipse cx="100" cy="154" rx="30" ry="9" opacity="0.7" />
+        <ellipse cx="44" cy="60" rx="26" ry="8" opacity="0.5" />
+        <ellipse cx="160" cy="86" rx="28" ry="8" opacity="0.5" />
       </g>
     </motion.svg>
   );
 }
+
 
 
 export function QuoteMark({ className }: { className?: string }) {
