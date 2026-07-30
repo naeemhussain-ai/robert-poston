@@ -181,24 +181,91 @@ export function GoldDivider({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Decorative heavenly motif: a soft angel silhouette drifting in wispy clouds
+ * with gentle rays of light. Purely decorative, semi-transparent, never a focal point.
+ * (Replaces the previous botanical/foliage motif — same name, props and placement.)
+ */
 export function Botanical({ className }: { className?: string }) {
+  const reduce = useReducedMotion();
+  const uid = useId().replace(/[:]/g, "");
   return (
-    <svg
+    <motion.svg
       aria-hidden
       viewBox="0 0 200 200"
-      className={cn("pointer-events-none absolute text-gold/25", className)}
+      className={cn("pointer-events-none absolute text-mist/40", className)}
       fill="none"
-      stroke="currentColor"
-      strokeWidth="0.8"
+      animate={reduce ? undefined : { y: [0, -14, 0], opacity: [0.75, 1, 0.75] }}
+      transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
     >
-      <path d="M100 190C100 120 70 70 30 40" />
-      <path d="M100 160c-20-6-34-20-40-40M100 130c-18-4-30-16-36-34M100 100c-16-2-27-13-32-28" />
-      <path d="M100 190C100 120 130 70 170 40" />
-      <path d="M100 160c20-6 34-20 40-40M100 130c18-4 30-16 36-34" />
-      <circle cx="100" cy="30" r="8" />
-    </svg>
+      <defs>
+        <radialGradient id={`glow-${uid}`} cx="50%" cy="38%" r="55%">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
+          <stop offset="60%" stopColor="currentColor" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id={`ray-${uid}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id={`veil-${uid}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.34" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.04" />
+        </linearGradient>
+        <filter id={`soft-${uid}`} x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="2.4" />
+        </filter>
+        <filter id={`softer-${uid}`} x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="4.5" />
+        </filter>
+      </defs>
+
+      {/* heavenly haze */}
+      <circle cx="100" cy="80" r="86" fill={`url(#glow-${uid})`} />
+
+      {/* gentle rays of light */}
+      <g filter={`url(#softer-${uid})`} fill={`url(#ray-${uid})`}>
+        <path d="M100 26 78 190h14z" />
+        <path d="M100 26 108 190h13z" />
+        <path d="M100 26 132 182l12-6z" />
+        <path d="M100 26 68 182l-12-6z" />
+      </g>
+
+      {/* angel silhouette — wings, veil, halo */}
+      <g filter={`url(#soft-${uid})`} fill="currentColor">
+        <path
+          d="M98 68c-10-14-26-24-44-26 12 10 21 22 26 36 4 11 11 18 18 21z"
+          opacity="0.3"
+        />
+        <path
+          d="M102 68c10-14 26-24 44-26-12 10-21 22-26 36-4 11-11 18-18 21z"
+          opacity="0.3"
+        />
+        <ellipse cx="100" cy="52" rx="7" ry="8" opacity="0.34" />
+        <path d="M100 62c9 0 15 9 18 24 4 21 6 40 4 58-8 5-36 5-44 0-2-18 0-37 4-58 3-15 9-24 18-24z" fill={`url(#veil-${uid})`} />
+      </g>
+      <ellipse cx="100" cy="38" rx="11" ry="3.2" fill="none" stroke="currentColor" strokeOpacity="0.35" strokeWidth="0.8" />
+
+      {/* distant angels */}
+      <g filter={`url(#softer-${uid})`} fill="currentColor" opacity="0.16">
+        <path d="M36 118c-5-6-12-10-19-11 5 5 9 10 11 16 2 5 5 8 8 9zM38 118c4-6 11-10 18-11-5 5-8 10-10 16-2 5-5 8-8 9z" />
+        <ellipse cx="37" cy="112" rx="3" ry="3.4" />
+        <path d="M164 142c-4-5-10-9-16-10 4 4 8 9 9 14 2 4 4 7 7 8zM166 142c4-5 10-9 16-10-4 4-8 9-9 14-2 4-4 7-7 8z" />
+        <ellipse cx="165" cy="137" rx="2.6" ry="3" />
+      </g>
+
+      {/* soft flowing clouds */}
+      <g filter={`url(#soft-${uid})`} fill="currentColor" opacity="0.2">
+        <ellipse cx="72" cy="164" rx="46" ry="13" />
+        <ellipse cx="126" cy="172" rx="52" ry="14" />
+        <ellipse cx="100" cy="150" rx="30" ry="9" opacity="0.7" />
+        <ellipse cx="46" cy="66" rx="26" ry="8" opacity="0.5" />
+        <ellipse cx="158" cy="88" rx="28" ry="8" opacity="0.5" />
+      </g>
+    </motion.svg>
   );
 }
+
 
 export function QuoteMark({ className }: { className?: string }) {
   const reduce = useReducedMotion();
