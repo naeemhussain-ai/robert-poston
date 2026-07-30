@@ -55,6 +55,14 @@ const gallery = [
 function AboutHero() {
   return (
     <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-44">
+      <img
+        src="/sky.png"
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+      />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
       <Particles />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-14 lg:grid-cols-[1.1fr_0.9fr]">

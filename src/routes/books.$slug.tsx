@@ -6,7 +6,7 @@ import { books } from "@/data/content";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = ["/spirit-of-love.jpg", book2, book3];
+const bookImages = ["/book.png", book2, book3];
 
 export const Route = createFileRoute("/books/$slug")({
   loader: ({ params: { slug } }) => {
@@ -46,6 +46,14 @@ function BookDetailPage() {
   return (
     <>
       <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-40">
+        <img
+          src="/sky.png"
+          alt=""
+          aria-hidden
+          width={1920}
+          height={1280}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+        />
         <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)" }} />
         <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
         <Particles />

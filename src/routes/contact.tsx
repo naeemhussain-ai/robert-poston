@@ -197,6 +197,14 @@ function Contact() {
   return (
     <>
       <section className="surface-midnight grain relative overflow-hidden px-6 pb-20 pt-44 text-center">
+        <img
+          src="/sky.png"
+          alt=""
+          aria-hidden
+          width={1920}
+          height={1280}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+        />
         <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
         <Particles />
         <div className="relative z-10 mx-auto max-w-2xl">

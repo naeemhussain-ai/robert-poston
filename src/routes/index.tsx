@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   authorBio,
+  books,
   featuredQuote,
   hero,
   journey,
@@ -37,7 +38,7 @@ import {
 } from "@/data/content";
 import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
-import heroSky from "@/assets/hero-sky.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,19 +65,19 @@ function Hero() {
     <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
       {/* Heavenly sky: clouds, light rays and distant angels */}
       <img
-        src={heroSky}
+        src="/sky.png"
         alt=""
         aria-hidden
         width={1920}
         height={1280}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, oklch(0.19 0.032 260 / 0.92) 0%, oklch(0.19 0.032 260 / 0.72) 45%, oklch(0.19 0.032 260 / 0.35) 100%)",
+            "linear-gradient(90deg, oklch(0.19 0.032 260 / 0.70) 0%, oklch(0.19 0.032 260 / 0.45) 45%, oklch(0.19 0.032 260 / 0.10) 100%)",
         }}
       />
       <div
@@ -128,7 +129,7 @@ function Hero() {
           >
             <Magnetic>
               <Button asChild size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
-                <Link to="/book">{hero.primaryCta}</Link>
+                <a href={books[0].amazonLink} target="_blank" rel="noopener noreferrer">{hero.primaryCta}</a>
               </Button>
             </Magnetic>
             <Magnetic>
@@ -374,7 +375,7 @@ function Home() {
       <Testimonials />
       <TimelineSection eyebrow="Reader Journey" title="Four movements of the story" items={journey} />
       <Newsletter />
-      <CtaBanner headline="Your Next Favorite Story Awaits" cta="Get the Book" />
+      <CtaBanner headline="Your Next Favorite Story Awaits" cta="Get the Book" href={books[0].amazonLink} />
     </>
   );
 }

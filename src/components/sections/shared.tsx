@@ -17,11 +17,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { books, formats } from "@/data/content";
 import { cn } from "@/lib/utils";
-import bookHero from "@/assets/book-hero.jpg";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = ["/spirit-of-love.jpg", book2, book3];
+const bookImages = ["/book.png", book2, book3];
 
 const formatIcons = [BookMarked, BookOpen, Tablet, Headphones];
 
@@ -159,11 +158,13 @@ export function TimelineSection({
 export function CtaBanner({
   headline,
   cta,
-  to = "/book",
+  to,
+  href,
 }: {
   headline: string;
   cta: string;
   to?: string;
+  href?: string;
 }) {
   return (
     <Section className="surface-midnight grain text-center">
@@ -179,7 +180,11 @@ export function CtaBanner({
         <div className="mt-12 flex justify-center">
           <Magnetic>
             <Button asChild size="lg" className="rounded-full px-10 text-[0.7rem] uppercase tracking-[0.28em]">
-              <Link to={to}>{cta}</Link>
+              {href ? (
+                <a href={href} target="_blank" rel="noopener noreferrer">{cta}</a>
+              ) : (
+                <Link to={to!}>{cta}</Link>
+              )}
             </Button>
           </Magnetic>
         </div>
@@ -203,7 +208,7 @@ export function BookMockup({ className, floating = true }: { className?: string;
         style={{ boxShadow: "var(--shadow-glow)" }}
       />
       <img
-        src={bookHero}
+        src="/book.png"
         alt="Hardcover edition of The Spirit of Love"
         width={1200}
         height={1504}

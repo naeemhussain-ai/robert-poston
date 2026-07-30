@@ -27,7 +27,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { chapters, faq, genres, reviews, site, synopsis, themes } from "@/data/content";
+import { books, chapters, faq, genres, reviews, site, synopsis, themes } from "@/data/content";
 import deskImg from "@/assets/desk.jpg";
 import libraryImg from "@/assets/library.jpg";
 import mistImg from "@/assets/mist.jpg";
@@ -56,6 +56,14 @@ export const Route = createFileRoute("/book")({
 function BookHero() {
   return (
     <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-40">
+      <img
+        src="/sky.png"
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+      />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
       <Particles />
@@ -83,9 +91,11 @@ function BookHero() {
           </p>
           <div className="mt-12 flex flex-wrap gap-4">
             <Magnetic>
-              <Button size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
-                Buy Now
-              </Button>
+              <a href={books[0].amazonLink} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
+                  Buy Now
+                </Button>
+              </a>
             </Magnetic>
             <Magnetic>
               <Button
@@ -238,7 +248,7 @@ function BookPage() {
       />
       <Reviews />
       <Faq />
-      <CtaBanner headline="Get Your Copy Today" cta="Buy the Book" />
+      <CtaBanner headline="Get Your Copy Today" cta="Buy the Book" href={books[0].amazonLink} />
     </>
   );
 }
