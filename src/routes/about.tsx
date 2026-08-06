@@ -27,7 +27,7 @@ import readingRoomImg from "@/assets/reading-room.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Stella Denise Solano — Author of The Spirit of Love" },
+      { title: "About Stella Denise Solano | Author of The Spirit of Love" },
       {
         name: "description",
         content:
@@ -223,7 +223,7 @@ function About() {
       <Biography />
       <QuoteBlock
         // EDIT: Replace inspirational quote
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+        text="I stopped asking God to take me back. I started asking Him to use whatever was left."
         attribution={site.author}
       />
       <TimelineSection eyebrow="Milestones" title="A writing life, in chapters" items={authorTimeline} />

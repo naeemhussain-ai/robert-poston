@@ -43,16 +43,16 @@ import deskImg from "@/assets/desk.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Spirit of Love — A Novel by Stella Denise Solano" },
+      { title: "The Spirit of Love | A Memoir by Stella Denise Solano" },
       {
         name: "description",
         content:
-          "Enter the world of The Spirit of Love, a luminous novel by Stella Denise Solano about love, destiny, hope and healing.",
+          "The Spirit of Love is a spiritual memoir by Stella Denise Solano. A true story of survival, faith, betrayal, and the enduring power of love.",
       },
-      { property: "og:title", content: "The Spirit of Love — A Novel by Stella Denise Solano" },
+      { property: "og:title", content: "The Spirit of Love | A Memoir by Stella Denise Solano" },
       {
         property: "og:description",
-        content: "A cinematic literary experience: love, destiny, hope and healing.",
+        content: "One woman's journey from silence and survival toward faith, love, and purpose.",
       },
     ],
   }),
@@ -198,7 +198,7 @@ function Themes() {
       <SectionHeading
         eyebrow="Story Themes"
         title="Four threads woven through the novel"
-        intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore."
+        intro="The Spirit of Love is built around four emotional threads that run through every chapter of Denise's life."
       />
       <Stagger className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {themes.map((t, i) => (
@@ -342,8 +342,7 @@ function Newsletter() {
         <h2 className="display text-4xl sm:text-5xl">Join the Reader Circle</h2>
         {/* EDIT: Replace newsletter copy */}
         <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Receive a bonus chapter, letters from
-          the desk, and early notes on new work.
+          Receive a personal note from Denise, early access to new writing, reflections on faith and survival, and the bonus chapter available only to subscribers. No noise   only words worth reading.
         </p>
         <form
           className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row"

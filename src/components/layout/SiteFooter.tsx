@@ -59,7 +59,7 @@ export function SiteFooter() {
           <p className="eyebrow mb-4">The Reader Circle</p>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {/* EDIT: Replace newsletter blurb */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
+            Personal notes from Denise, early writing, and a bonus chapter   delivered straight to your inbox.
           </p>
           <form
             className="mt-6 flex flex-col gap-3 sm:flex-row"

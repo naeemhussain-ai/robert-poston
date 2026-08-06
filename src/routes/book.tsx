@@ -37,16 +37,16 @@ import readingRoomImg from "@/assets/reading-room.jpg";
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "The Spirit of Love — The Book | Stella Denise Solano" },
+      { title: "The Spirit of Love | The Memoir | Stella Denise Solano" },
       {
         name: "description",
         content:
-          "Synopsis, themes, chapter previews and formats for The Spirit of Love, the novel by Stella Denise Solano.",
+          "Synopsis, themes, chapter previews and formats for The Spirit of Love, the memoir by Stella Denise Solano.",
       },
-      { property: "og:title", content: "The Spirit of Love — The Book" },
+      { property: "og:title", content: "The Spirit of Love | The Memoir" },
       {
         property: "og:description",
-        content: "Synopsis, themes, chapter previews and formats for the novel.",
+        content: "Synopsis, themes, chapter previews and formats for the memoir.",
       },
     ],
   }),

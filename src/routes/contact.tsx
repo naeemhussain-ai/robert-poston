@@ -40,7 +40,7 @@ import { contact, contactFaq } from "@/data/content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Stella Denise Solano, Author" },
+      { title: "Contact | Stella Denise Solano, Author" },
       {
         name: "description",
         content:
@@ -215,8 +215,7 @@ function Contact() {
           <GoldDivider className="mt-10" />
           {/* EDIT: Replace contact intro */}
           <p className="mt-8 text-base leading-relaxed text-muted-foreground">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
+            Whether you are a reader, a bookshop, a faith community, or someone who simply needs to share what this book has meant   Denise welcomes your message.
           </p>
         </div>
       </section>
