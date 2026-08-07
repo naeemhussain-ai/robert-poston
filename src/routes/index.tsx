@@ -1,19 +1,17 @@
 import { Link } from "@/lib/router";
-import { motion, useReducedMotion } from "motion/react";
-import { ArrowDown, Star } from "lucide-react";
+import { Star } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import {
   Botanical,
   GoldDivider,
   Magnetic,
   Orbs,
   Parallax,
-  Particles,
   Reveal,
   Section,
   SectionHeading,
   Stagger,
   StaggerItem,
-  WordReveal,
 } from "@/components/lux";
 import {
   BookCollectionSection,
@@ -36,15 +34,14 @@ import {
   testimonials,
   themes,
 } from "@/data/content";
-import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
 import { withBase } from "@/lib/asset-path";
 
+const stellaPortrait = withBase("/stella-portrait.jpg");
+
 function Hero() {
-  const reduce = useReducedMotion();
   return (
     <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
-      {/* Heavenly sky: clouds, light rays and distant angels */}
       <img
         src={withBase("/sky.png")}
         alt=""
@@ -66,108 +63,47 @@ function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{ background: "var(--gradient-aurora)" }}
       />
-      <Orbs />
-      <Particles />
 
-
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1fr_1.2fr]">
         <div>
-          <motion.p
-            className="eyebrow"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {hero.eyebrow}
-          </motion.p>
+          <p className="eyebrow">{hero.eyebrow}</p>
 
           <h1 className="display mt-8 text-[3.25rem] leading-[0.98] sm:text-7xl lg:text-[6.5rem]">
-            <WordReveal text={hero.title} delay={0.2} />
+            {hero.title}
           </h1>
 
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 h-px w-40 origin-left bg-gold/70"
-          />
+          <div className="mt-10 h-px w-40 bg-gold/70" />
 
-          {/* EDIT: Replace hero paragraph */}
-          <motion.p
-            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.4, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
             {hero.body}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="mt-12 flex flex-wrap items-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 1.25 }}
-          >
-            <Magnetic>
-              <Button asChild size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
-                <a href={books[0].amazonLink} target="_blank" rel="noopener noreferrer">{hero.primaryCta}</a>
-              </Button>
-            </Magnetic>
-            <Magnetic>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full border-border bg-transparent px-9 text-[0.7rem] uppercase tracking-[0.26em] hover:bg-secondary"
-              >
-                <Link to="/book" hash="chapters">
-                  {hero.secondaryCta}
-                </Link>
-              </Button>
-            </Magnetic>
-          </motion.div>
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            <Button asChild size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
+              <a href={books[0].amazonLink} target="_blank" rel="noopener noreferrer">{hero.primaryCta}</a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-border bg-transparent px-9 text-[0.7rem] uppercase tracking-[0.26em] hover:bg-secondary"
+            >
+              <Link to="/book" hash="chapters">
+                {hero.secondaryCta}
+              </Link>
+            </Button>
+          </div>
         </div>
 
-        <motion.div
-          className="relative mx-auto w-[74%] max-w-md lg:w-full"
-          initial={{ opacity: 0, scale: 0.9, filter: "blur(16px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span
-            aria-hidden
-            className="absolute -inset-16 -z-10 rounded-full border border-gold/10"
-          />
-          <span aria-hidden className="absolute -inset-28 -z-10 rounded-full border border-gold/[0.06]" />
+        <div className="relative w-[115%] translate-x-6">
           <BookMockup />
-          {!reduce &&
-            [0, 1, 2, 3].map((i) => (
-              <motion.span
-                key={i}
-                aria-hidden
-                className="absolute h-2.5 w-2.5 rounded-full bg-lavender/50 blur-[1px]"
-                style={{ left: `${12 + i * 24}%`, top: `${18 + ((i * 27) % 60)}%` }}
-                animate={{ y: [0, -50, 0], x: [0, 18, 0], opacity: [0.2, 0.8, 0.2] }}
-                transition={{ duration: 11 + i * 3, repeat: Infinity, ease: "easeInOut", delay: i }}
-              />
-            ))}
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center gap-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-      >
+      <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center gap-3">
         <span className="text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Scroll</span>
-        <motion.span
-          animate={reduce ? undefined : { y: [0, 10, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown className="h-4 w-4 text-gold" />
-        </motion.span>
-      </motion.div>
+        <ArrowDown className="h-4 w-4 text-gold" />
+      </div>
     </section>
   );
 }
@@ -247,7 +183,7 @@ function AuthorPreview() {
           <Reveal>
             <div className="group relative overflow-hidden rounded-3xl">
               <img
-                src={authorPortrait}
+                src={stellaPortrait}
                 alt={`Portrait of ${site.author}`}
                 loading="lazy"
                 width={1008}

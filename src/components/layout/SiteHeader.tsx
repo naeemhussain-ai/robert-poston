@@ -31,7 +31,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-700",
         scrolled
-          ? "bg-white/75 border-b border-border/60 shadow-sm backdrop-blur-xl"
+          ? "bg-midnight/90 border-b border-white/10 shadow-sm backdrop-blur-xl"
           : "bg-transparent",
       )}
     >
@@ -43,11 +43,7 @@ export function SiteHeader() {
       >
         <Link to="/" className="group flex items-center gap-3">
           <img
-            src={
-              scrolled
-                ? withBase("/Stella Denise Solano - Logo Design.png")
-                : withBase("/Stella Denise Solano - Logo Design - 02.png")
-            }
+            src={withBase("/Stella Denise Solano - Logo Design - 02.png")}
             alt={site.author}
             className="h-14 w-auto"
           />
@@ -62,9 +58,7 @@ export function SiteHeader() {
                 "lux-underline text-[0.7rem] uppercase tracking-[0.28em] transition-colors duration-500",
                 pathname === item.to
                   ? "text-gold"
-                  : scrolled
-                    ? "text-foreground/80 hover:text-foreground"
-                    : "text-white/70 hover:text-white",
+                  : "text-white/70 hover:text-white",
               )}
             >
               {item.label}
@@ -85,7 +79,7 @@ export function SiteHeader() {
                 aria-label="Open menu"
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-full border md:hidden",
-                  scrolled ? "border-border text-foreground" : "border-white/30 text-white",
+                  "border-white/30 text-white",
                 )}
               >
                 <Menu className="h-4 w-4" />

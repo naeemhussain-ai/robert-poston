@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import {
   Botanical,
@@ -16,7 +15,6 @@ import {
 } from "@/components/lux";
 import { CtaBanner, QuoteBlock, TimelineSection } from "@/components/sections/shared";
 import { authorBio, authorTimeline, awards, philosophy, site } from "@/data/content";
-import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
 import libraryImg from "@/assets/library.jpg";
 import mistImg from "@/assets/mist.jpg";
@@ -24,13 +22,15 @@ import petalsImg from "@/assets/petals.jpg";
 import readingRoomImg from "@/assets/reading-room.jpg";
 import { withBase } from "@/lib/asset-path";
 
+const stellaPortrait = withBase("/stella-portrait.jpg");
+
 const gallery = [
   { src: libraryImg, alt: "A candlelit historic library at dusk" },
   { src: petalsImg, alt: "White rose petals resting on parchment" },
   { src: deskImg, alt: "Fountain pen and handwritten letters by candlelight" },
   { src: mistImg, alt: "Light through a misty forest at dawn" },
   { src: readingRoomImg, alt: "A velvet armchair in a moonlit reading room" },
-  { src: authorPortrait, alt: `${site.author} writing at her desk` },
+  { src: stellaPortrait, alt: `${site.author}` },
 ];
 
 function AboutHero() {
@@ -62,7 +62,7 @@ function AboutHero() {
           <Reveal>
             <div className="group overflow-hidden rounded-[2rem] shadow-[var(--shadow-lux)]">
               <img
-                src={authorPortrait}
+                src={stellaPortrait}
                 alt={`Portrait of ${site.author}`}
                 width={1008}
                 height={1264}
@@ -143,36 +143,26 @@ function Gallery() {
         ))}
       </div>
 
-      <AnimatePresence>
-        {active !== null ? (
-          <motion.div
-            className="fixed inset-0 z-[70] flex items-center justify-center bg-midnight/90 p-6 backdrop-blur-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+      {active !== null ? (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-midnight/90 p-6 backdrop-blur-xl"
+          onClick={() => setActive(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-ivory/30 text-ivory"
             onClick={() => setActive(null)}
           >
-            <button
-              type="button"
-              aria-label="Close"
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-ivory/30 text-ivory"
-              onClick={() => setActive(null)}
-            >
-              <X className="h-4 w-4" />
-            </button>
-            <motion.img
-              key={gallery[active].src}
-              src={gallery[active].src}
-              alt={gallery[active].alt}
-              initial={{ scale: 0.92, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="max-h-[82vh] w-auto rounded-2xl shadow-[var(--shadow-lux)]"
-            />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+            <X className="h-4 w-4" />
+          </button>
+          <img
+            src={gallery[active].src}
+            alt={gallery[active].alt}
+            className="max-h-[82vh] w-auto rounded-2xl shadow-[var(--shadow-lux)]"
+          />
+        </div>
+      ) : null}
     </Section>
   );
 }

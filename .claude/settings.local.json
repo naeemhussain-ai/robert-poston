@@ -19,7 +19,9 @@
       "Bash(vercel teams *)",
       "Bash(vercel project *)",
       "Bash(vercel link *)",
-      "Bash(vercel --prod --yes)"
+      "Bash(vercel --prod --yes)",
+      "Bash(cp \"c:/Users/Administrator/Downloads/WhatsApp Image 2026-08-07 at 2.39.04 AM.jpeg\" \"C:/Users/Administrator/Desktop/TechGenics/spirit-of-design/public/stella-portrait.jpg\")",
+      "Bash(cp \"c:/Users/Administrator/Downloads/ChatGPT Image Aug 7, 2026, 10_48_00 PM.png\" \"C:/Users/Administrator/Desktop/TechGenics/spirit-of-design/public/book-cover.png\")"
     ]
   }
 }

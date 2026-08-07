@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -76,24 +75,11 @@ function ContactForm() {
 
   return (
     <div className="glass relative rounded-[2rem] p-8 sm:p-12">
-      <AnimatePresence mode="wait">
         {sent ? (
-          <motion.div
-            key="success"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-center py-16 text-center"
-          >
-            <motion.span
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 text-gold"
-              initial={{ rotate: -30, scale: 0.6 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            >
+          <div className="flex flex-col items-center py-16 text-center">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 text-gold">
               <Check className="h-6 w-6" />
-            </motion.span>
+            </span>
             <h3 className="display mt-8 text-4xl">Your letter is on its way</h3>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               Thank you for writing. A reply usually arrives {contact.responseTime.toLowerCase()}.
@@ -101,9 +87,9 @@ function ContactForm() {
             <Button variant="outline" className="mt-10 rounded-full border-border bg-transparent px-8" onClick={() => setSent(false)}>
               Write another
             </Button>
-          </motion.div>
+          </div>
         ) : (
-          <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
                 <div className="grid gap-7 sm:grid-cols-2">
@@ -167,9 +153,8 @@ function ContactForm() {
                 </Magnetic>
               </form>
             </Form>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </div>
   );
 }

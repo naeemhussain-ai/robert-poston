@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = [withBase("/book.png"), book2, book3];
+const bookImages = [withBase("/book-cover.png"), book2, book3];
 
 const formatIcons = [BookMarked, BookOpen, Tablet, Headphones];
 
@@ -104,14 +104,9 @@ export function TimelineSection({
       <SectionHeading eyebrow={eyebrow} title={title} />
       <div className="relative mx-auto mt-24 max-w-6xl">
         <div className="pointer-events-none absolute inset-0 hidden sm:block">
-          <motion.div
+          <div
             aria-hidden
             className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-gold/40 via-gold/10 to-transparent"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-            style={{ originY: 0 }}
           />
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
@@ -119,13 +114,11 @@ export function TimelineSection({
             const stepNum = item.step ?? String(i + 1);
             return (
               <Reveal key={item.title} delay={i * 0.1}>
-                <motion.div
+                <div
                   className={cn(
                     "group relative overflow-hidden rounded-3xl border border-white/10 bg-midnight p-10 transition-all duration-700 hover:-translate-y-2 hover:border-gold/50",
                     i % 2 === 1 ? "sm:mt-16" : "",
                   )}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 20 }}
                 >
                   <div className="absolute -right-6 -top-6 flex h-24 w-24 items-center justify-center rounded-full border border-gold/10">
                     <span className="display text-5xl font-bold tracking-tight text-gold/15">
@@ -146,7 +139,7 @@ export function TimelineSection({
                       <span className="h-px w-8 bg-gold/30" />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </Reveal>
             );
           })}
@@ -199,21 +192,20 @@ export function BookMockup({ className, floating = true }: { className?: string;
   return (
     <motion.div
       className={cn("relative", className)}
-      animate={reduce || !floating ? undefined : { y: [0, -18, 0], rotateZ: [-1.2, 1.2, -1.2] }}
-      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      animate={reduce || !floating ? undefined : { y: [0, -24, 0], rotateZ: [-1, 1, -1] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       style={{ perspective: 1200 }}
     >
       <div
         aria-hidden
-        className="absolute inset-6 rounded-[2rem] bg-gold/25 blur-[80px]"
-        style={{ boxShadow: "var(--shadow-glow)" }}
+        className="absolute inset-0 -z-10 scale-75 rounded-full bg-gold/20 blur-[100px]"
       />
       <img
-        src={withBase("/book.png")}
+        src={withBase("/book-cover.png")}
         alt="Hardcover edition of The Spirit of Love"
         width={1200}
         height={1504}
-        className="relative w-full rounded-[1.75rem] shadow-[var(--shadow-lux)]"
+        className="relative w-full drop-shadow-[0_60px_80px_rgba(0,0,0,0.6)]"
       />
     </motion.div>
   );

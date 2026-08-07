@@ -7,7 +7,7 @@ import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 import { withBase } from "@/lib/asset-path";
 
-const bookImages = [withBase("/book.png"), book2, book3];
+const bookImages = [withBase("/book-cover.png"), book2, book3];
 
 export function BookDetailPage() {
   const { slug } = useRouteParams<{ slug: string }>();
