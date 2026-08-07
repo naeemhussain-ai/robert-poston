@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/lib/router";
 import { motion, useReducedMotion } from "motion/react";
 import { BookOpen, Headphones, Tablet, BookMarked } from "lucide-react";
 import {
@@ -15,12 +15,13 @@ import {
   StaggerItem,
 } from "@/components/lux";
 import { Button } from "@/components/ui/button";
+import { withBase } from "@/lib/asset-path";
 import { books, formats } from "@/data/content";
 import { cn } from "@/lib/utils";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = ["/book.png", book2, book3];
+const bookImages = [withBase("/book.png"), book2, book3];
 
 const formatIcons = [BookMarked, BookOpen, Tablet, Headphones];
 
@@ -208,7 +209,7 @@ export function BookMockup({ className, floating = true }: { className?: string;
         style={{ boxShadow: "var(--shadow-glow)" }}
       />
       <img
-        src="/book.png"
+        src={withBase("/book.png")}
         alt="Hardcover edition of The Spirit of Love"
         width={1200}
         height={1504}

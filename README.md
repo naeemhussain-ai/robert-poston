@@ -1,6 +1,6 @@
 # Spirit of Design
 
-# Lovable Prompt — **The Spirit of Love** Premium Author Website (Luxury Editorial Edition)
+# Lovable Prompt   **The Spirit of Love** Premium Author Website (Luxury Editorial Edition)
 
 > **Copy everything below into Lovable.**
 
@@ -960,7 +960,7 @@ Continue developing this project in the [Lovable editor](https://lovable.dev/pro
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Prefer working locally? You need Node.js and npm   [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>

@@ -184,7 +184,7 @@ export function GoldDivider({ className }: { className?: string }) {
 /**
  * Decorative heavenly motif: a couple of wispy angels flying through soft clouds
  * and gentle rays of light. Purely decorative, semi-transparent, never a focal point.
- * (Replaces the previous botanical/foliage motif — same name, props and placement.)
+ * (Replaces the previous botanical/foliage motif   same name, props and placement.)
  */
 function FlyingAngel({ soft }: { soft: string }) {
   // Local coords, angel facing right, ascending. Kept loose and soft on purpose.

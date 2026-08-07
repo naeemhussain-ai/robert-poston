@@ -1,34 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
 
+import App from "./App";
 import "./styles.css";
 
-const queryClient = new QueryClient();
+const rootElement = document.getElementById("root");
 
-const router = createRouter({
-  routeTree,
-  context: { queryClient },
-  scrollRestoration: true,
-  defaultPreloadStaleTime: 0,
-});
-
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: typeof router;
-  }
-}
-
-const rootElement = document.getElementById("root")!;
-if (!rootElement.innerHTML) {
-  const root = createRoot(rootElement);
-  root.render(
+if (rootElement) {
+  createRoot(rootElement).render(
     <StrictMode>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <App />
     </StrictMode>,
   );
 }

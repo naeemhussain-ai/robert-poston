@@ -1,45 +1,36 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useRouteParams } from "@/lib/router";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Magnetic, Orbs, Particles, Reveal, Section, SectionHeading } from "@/components/lux";
 import { Button } from "@/components/ui/button";
 import { books } from "@/data/content";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
+import { withBase } from "@/lib/asset-path";
 
-const bookImages = ["/book.png", book2, book3];
+const bookImages = [withBase("/book.png"), book2, book3];
 
-export const Route = createFileRoute("/books/$slug")({
-  loader: ({ params: { slug } }) => {
-    const book = books.find((b) => b.slug === slug);
-    if (!book) throw notFound();
-    return book;
-  },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData!.title} — Stella Denise Solano` },
-      { name: "description", content: loaderData!.body },
-    ],
-  }),
-  component: BookDetailPage,
-  notFoundComponent: () => (
-    <section className="grain flex min-h-screen items-center justify-center px-6">
-      <div className="text-center">
-        <h1 className="display text-6xl">Book not found</h1>
-        <p className="mt-4 text-muted-foreground">The book you are looking for does not exist.</p>
-        <Link
-          to="/"
-          className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
-        </Link>
-      </div>
-    </section>
-  ),
-});
+export function BookDetailPage() {
+  const { slug } = useRouteParams<{ slug: string }>();
+  const book = books.find((item) => item.slug === slug);
 
-function BookDetailPage() {
-  const book = Route.useLoaderData();
+  if (!book) {
+    return (
+      <section className="grain flex min-h-screen items-center justify-center px-6">
+        <div className="text-center">
+          <h1 className="display text-6xl">Book not found</h1>
+          <p className="mt-4 text-muted-foreground">The book you are looking for does not exist.</p>
+          <Link
+            to="/"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   const index = books.findIndex((b) => b.slug === book.slug);
   const image = bookImages[index] ?? bookImages[0];
 
@@ -47,7 +38,7 @@ function BookDetailPage() {
     <>
       <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-40">
         <img
-          src="/sky.png"
+          src={withBase("/sky.png")}
           alt=""
           aria-hidden
           width={1920}

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Star } from "lucide-react";
 import {
   Botanical,
@@ -33,31 +32,13 @@ import libraryImg from "@/assets/library.jpg";
 import mistImg from "@/assets/mist.jpg";
 import petalsImg from "@/assets/petals.jpg";
 import readingRoomImg from "@/assets/reading-room.jpg";
-
-export const Route = createFileRoute("/book")({
-  head: () => ({
-    meta: [
-      { title: "The Spirit of Love | The Memoir | Stella Denise Solano" },
-      {
-        name: "description",
-        content:
-          "Synopsis, themes, chapter previews and formats for The Spirit of Love, the memoir by Stella Denise Solano.",
-      },
-      { property: "og:title", content: "The Spirit of Love | The Memoir" },
-      {
-        property: "og:description",
-        content: "Synopsis, themes, chapter previews and formats for the memoir.",
-      },
-    ],
-  }),
-  component: BookPage,
-});
+import { withBase } from "@/lib/asset-path";
 
 function BookHero() {
   return (
     <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-40">
       <img
-        src="/sky.png"
+        src={withBase("/sky.png")}
         alt=""
         aria-hidden
         width={1920}
@@ -226,7 +207,7 @@ function Faq() {
   );
 }
 
-function BookPage() {
+export function BookPage() {
   return (
     <>
       <BookHero />

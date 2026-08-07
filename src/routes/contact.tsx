@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useForm } from "react-hook-form";
@@ -36,25 +35,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { contact, contactFaq } from "@/data/content";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact | Stella Denise Solano, Author" },
-      {
-        name: "description",
-        content:
-          "Write to Stella Denise Solano: press enquiries, book club visits, speaking invitations and reader letters.",
-      },
-      { property: "og:title", content: "Contact Stella Denise Solano" },
-      {
-        property: "og:description",
-        content: "Press, book clubs, speaking invitations and reader letters.",
-      },
-    ],
-  }),
-  component: Contact,
-});
+import { withBase } from "@/lib/asset-path";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
@@ -193,12 +174,12 @@ function ContactForm() {
   );
 }
 
-function Contact() {
+export function ContactPage() {
   return (
     <>
       <section className="surface-midnight grain relative overflow-hidden px-6 pb-20 pt-44 text-center">
         <img
-          src="/sky.png"
+          src={withBase("/sky.png")}
           alt=""
           aria-hidden
           width={1920}

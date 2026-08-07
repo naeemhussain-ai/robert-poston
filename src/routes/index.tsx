@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@/lib/router";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, Star } from "lucide-react";
 import {
@@ -38,26 +38,7 @@ import {
 } from "@/data/content";
 import authorPortrait from "@/assets/author-portrait.jpg";
 import deskImg from "@/assets/desk.jpg";
-
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "The Spirit of Love | A Memoir by Stella Denise Solano" },
-      {
-        name: "description",
-        content:
-          "The Spirit of Love is a spiritual memoir by Stella Denise Solano. A true story of survival, faith, betrayal, and the enduring power of love.",
-      },
-      { property: "og:title", content: "The Spirit of Love | A Memoir by Stella Denise Solano" },
-      {
-        property: "og:description",
-        content: "One woman's journey from silence and survival toward faith, love, and purpose.",
-      },
-    ],
-  }),
-  component: Home,
-});
+import { withBase } from "@/lib/asset-path";
 
 function Hero() {
   const reduce = useReducedMotion();
@@ -65,7 +46,7 @@ function Hero() {
     <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
       {/* Heavenly sky: clouds, light rays and distant angels */}
       <img
-        src="/sky.png"
+        src={withBase("/sky.png")}
         alt=""
         aria-hidden
         width={1920}
@@ -361,7 +342,7 @@ function Newsletter() {
   );
 }
 
-function Home() {
+export function HomePage() {
   return (
     <>
       <Hero />

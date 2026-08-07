@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu } from "lucide-react";
 import { nav, site } from "@/data/content";
 import { Magnetic } from "@/components/lux";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { withBase } from "@/lib/asset-path";
+import { Link, useCurrentPath } from "@/lib/router";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = useCurrentPath();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -42,7 +43,11 @@ export function SiteHeader() {
       >
         <Link to="/" className="group flex items-center gap-3">
           <img
-            src={scrolled ? "/Stella Denise Solano - Logo Design.png" : "/Stella Denise Solano - Logo Design - 02.png"}
+            src={
+              scrolled
+                ? withBase("/Stella Denise Solano - Logo Design.png")
+                : withBase("/Stella Denise Solano - Logo Design - 02.png")
+            }
             alt={site.author}
             className="h-14 w-auto"
           />

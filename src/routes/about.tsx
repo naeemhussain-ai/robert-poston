@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
@@ -23,25 +22,7 @@ import libraryImg from "@/assets/library.jpg";
 import mistImg from "@/assets/mist.jpg";
 import petalsImg from "@/assets/petals.jpg";
 import readingRoomImg from "@/assets/reading-room.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Stella Denise Solano | Author of The Spirit of Love" },
-      {
-        name: "description",
-        content:
-          "Meet Stella Denise Solano: her story, writing philosophy, milestones and the world behind The Spirit of Love.",
-      },
-      { property: "og:title", content: "About Stella Denise Solano" },
-      {
-        property: "og:description",
-        content: "The story, philosophy and milestones behind The Spirit of Love.",
-      },
-    ],
-  }),
-  component: About,
-});
+import { withBase } from "@/lib/asset-path";
 
 const gallery = [
   { src: libraryImg, alt: "A candlelit historic library at dusk" },
@@ -56,7 +37,7 @@ function AboutHero() {
   return (
     <section className="surface-midnight grain relative overflow-hidden px-6 pb-24 pt-44">
       <img
-        src="/sky.png"
+        src={withBase("/sky.png")}
         alt=""
         aria-hidden
         width={1920}
@@ -216,7 +197,7 @@ function Awards() {
   );
 }
 
-function About() {
+export function AboutPage() {
   return (
     <>
       <AboutHero />

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * "The Spirit of Love" — luxury editorial design system.
+ * "The Spirit of Love"   luxury editorial design system.
  * Base surface is ivory/cream (light); midnight navy is opt-in per section
  * via the .surface-midnight utility which re-maps the tokens for
  * hero sections, footer, CTA banners, and quote blocks.

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/lib/router";
 import { Facebook, Instagram, BookOpen, Music2 } from "lucide-react";
 import { nav, site, socials } from "@/data/content";
 import { GoldDivider } from "@/components/lux";
