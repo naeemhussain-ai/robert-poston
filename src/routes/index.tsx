@@ -27,7 +27,7 @@ import {
 
 import { withBase } from "@/lib/asset-path";
 
-const portrait = withBase("/author-portrait.jpg");
+const portrait = withBase("/author-portrait-home.jpg");
 const heroBackground = withBase("/hero-door.png");
 const bookCover = withBase("/when-one-door-opens-cover.png");
 const featureIcons = [Leaf, HeartHandshake, Trees, BookOpen];
