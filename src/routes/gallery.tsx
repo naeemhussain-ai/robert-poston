@@ -82,7 +82,7 @@ export function GalleryPage() {
                     src={image.resolvedSrc}
                     alt={image.alt}
                     loading="lazy"
-                    className="h-[24rem] w-full bg-[#08111a] object-contain p-4 transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 sm:h-[26rem] lg:h-[28rem]"
+                    className="h-[24rem] w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 sm:h-[26rem] lg:h-[28rem]"
                   />
                   <div className="p-6">
                     <p className="display text-2xl text-card-foreground">{image.title}</p>
