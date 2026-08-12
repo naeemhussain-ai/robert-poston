@@ -9,7 +9,7 @@ import {
   StaggerItem,
   WordReveal,
 } from "@/components/lux";
-import { CtaBanner, QuoteBlock, TimelineSection } from "@/components/sections/shared";
+import { QuoteBlock, TimelineSection } from "@/components/sections/shared";
 import { authorBio, authorTimeline, philosophy, site } from "@/data/content";
 import deskImg from "@/assets/desk.jpg";
 import { withBase } from "@/lib/asset-path";
@@ -133,9 +133,7 @@ export function AboutPage() {
         attribution={site.author}
       />
       <TimelineSection eyebrow="Development" title="How the author vision takes shape" items={authorTimeline} />
-      <Philosophy />
       <WritingTable />
-      <CtaBanner headline="Discover the Story Behind the Book" cta="About the Book" to="/book" />
     </>
   );
 }

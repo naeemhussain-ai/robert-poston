@@ -24,7 +24,7 @@ import {
   synopsis,
   themes,
 } from "@/data/content";
-import mistImg from "@/assets/mist.jpg";
+
 import { withBase } from "@/lib/asset-path";
 
 const portrait = withBase("/author-portrait.jpg");
@@ -267,36 +267,6 @@ function AuthorPreview() {
   );
 }
 
-function AtmosphereStrip() {
-  return (
-    <Section className="surface-ivory">
-      <div className="mx-auto max-w-[88rem]">
-      <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-        <Reveal>
-          <div>
-            <p className="eyebrow">Visual Mood</p>
-            <h3 className="display mt-5 text-4xl text-gold">A threshold lit by hope</h3>
-            <div className="mt-5 h-px w-20 bg-primary/55" />
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/72">
-              The home page now takes its tone directly from the door artwork: deep night blues, mossy greens, warm gold typography, and a sense of stepping into something transformative.
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <div className="mx-auto max-w-[22rem] overflow-hidden rounded-[2rem] border border-gold/15 shadow-[0_45px_100px_-60px_rgba(0,0,0,0.95)] sm:max-w-[24rem] lg:max-w-[26rem]">
-            <img
-              src={mistImg}
-              alt="Misty forest suggesting renewal and uncertainty"
-              loading="lazy"
-              className="h-full w-full object-cover [filter:brightness(0.82)_saturate(0.9)]"
-            />
-          </div>
-        </Reveal>
-      </div>
-      </div>
-    </Section>
-  );
-}
 
 export function HomePage() {
   return (
@@ -308,7 +278,6 @@ export function HomePage() {
       <Themes />
       <AuthorPreview />
       <TimelineSection eyebrow="Story Arc" title="Four doors in Robert's journey" items={journey} />
-      <AtmosphereStrip />
       <CtaBanner headline="Step Into the Story Behind the Crash" cta="About the Book" to="/book" />
     </>
   );

@@ -8,7 +8,6 @@ import {
   Facebook,
   Instagram,
   Mail,
-  MapPin,
   Phone,
   UserRound,
   Youtube,
@@ -23,12 +22,6 @@ import {
   StaggerItem,
   WordReveal,
 } from "@/components/lux";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -40,7 +33,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contact, contactFaq, site } from "@/data/content";
+import { contact, site } from "@/data/content";
 import { withBase } from "@/lib/asset-path";
 
 const schema = z.object({
@@ -227,36 +220,6 @@ export function ContactPage() {
         </Stagger>
       </Section>
 
-      <Section className="surface-pearl">
-        <Reveal className="mx-auto max-w-3xl p-12 text-center">
-          <MapPin className="mx-auto h-5 w-5 text-primary" />
-          <h2 className="display mt-8 text-4xl">Current Base</h2>
-          <p className="mt-5 text-sm uppercase tracking-[0.28em] text-muted-foreground">
-            {contact.location}
-          </p>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            This block can later be replaced with a custom illustration, signature image, office detail, or launch-specific contact card if the client wants a more branded touch.
-          </p>
-        </Reveal>
-      </Section>
-
-      <Section className="bg-background">
-        <SectionHeading eyebrow="Quick Answers" title="Before you send a message" />
-        <Reveal className="mx-auto mt-14 max-w-3xl">
-          <Accordion type="single" collapsible>
-            {contactFaq.map((item, index) => (
-              <AccordionItem key={index} value={`c-${index}`} className="border-border">
-                <AccordionTrigger className="display py-6 text-left text-2xl hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Reveal>
-      </Section>
     </>
   );
 }

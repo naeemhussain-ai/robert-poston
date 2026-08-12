@@ -15,7 +15,6 @@ import {
   featuredQuote,
   genres,
   hero,
-  reviews,
   site,
   synopsis,
   themes,
@@ -202,9 +201,7 @@ export function BookPage() {
       <ThemeCards />
       <Structure />
       <EditorialNote />
-      <Reviews />
       <Faq />
-      <CtaBanner headline="See the Visual World Around the Story" cta="Open the Gallery" to="/gallery" />
     </>
   );
 }
