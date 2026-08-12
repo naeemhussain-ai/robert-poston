@@ -55,9 +55,9 @@ export const synopsis = {
   eyebrow: "Book Summary",
   heading: "A crash, a coma, and the lives waiting behind the next door",
   paragraphs: [
-    "When One Door Opens follows an ordinary man struggling with divorce and self-identity   a person who comes across as ungrateful while quietly falling apart. Just as fragile hope begins to return, a small-plane crash puts him on life support and into a coma that lasts nearly four months.",
-    "Inside that threshold, he leaves his body and enters the afterlife, where he discovers a generational curse he acquired in a past life   one he must work to break. He is guided by a spirit named Orin, a soul he had a close relationship with in a previous life who is also entangled in the curse. He also moves through the lives he could have lived, learning firsthand that the grass is not always greener on the other side.",
-    "The story builds toward a subtle and satisfying ending in which the main character accepts gratitude and chooses a more nurturing relationship, prioritizing his children and the people he loves over the things he only wished he had. The question at the center is not whether fate exists, but whether a person will finally choose the better door once it opens.",
+    `"When One Door Opens" is a story about an ordinary guy (the main character) going through life with the struggles that anyone of us could face or has faced. He comes off as being ungrateful while struggling with a divorce and self-identity. This main character ends up on life support after being in a small plane crash. While being confronted with being in a coma for almost four months he leaves his body and enters the afterlife.`,
+    "Along with this notion he comes to realize that there was a generational curse he had acquired in a past life in which he must work to break. He is guided by a positive spirit he had a close relationship with in a previous life named Orin who is also implicated in this curse. Along with this the main character enters a series of new experiences living vicariously as the person he could have been learning that the grass isn't always greener on the other side.",
+    "The story provides a subtle ending in which the main character accepts gratitude and a more nurturing relationship prioritizing his children and the people he loves versus having the things in life he only wish he had.",
   ],
   cta: "Read About the Book",
 };

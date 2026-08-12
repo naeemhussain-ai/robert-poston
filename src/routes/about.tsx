@@ -10,7 +10,7 @@ import {
   WordReveal,
 } from "@/components/lux";
 import { QuoteBlock, TimelineSection } from "@/components/sections/shared";
-import { authorBio, authorTimeline, bookQuote, philosophy, site, whyIWrote } from "@/data/content";
+import { authorBio, authorTimeline, featuredQuote, philosophy, site, whyIWrote } from "@/data/content";
 import deskImg from "@/assets/desk.jpg";
 import { withBase } from "@/lib/asset-path";
 
@@ -37,9 +37,11 @@ function AboutHero() {
             <WordReveal text={site.author} />
           </h1>
           <GoldDivider className="ml-0 mt-10 max-w-[12rem]" />
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {authorBio.short[0]}
-          </p>
+          {authorBio.short.map((para, i) => (
+            <p key={i} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+              {para}
+            </p>
+          ))}
         </div>
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-lux)]">
@@ -146,7 +148,7 @@ export function AboutPage() {
       <AboutHero />
       <Biography />
       <WhyIWrote />
-      <QuoteBlock text={bookQuote.text} attribution={bookQuote.attribution} />
+      <QuoteBlock text={featuredQuote.text} attribution={featuredQuote.attribution} />
       <TimelineSection eyebrow="Development" title="How the author vision takes shape" items={authorTimeline} />
       <WritingTable />
     </>

@@ -1,6 +1,5 @@
 import {
   Botanical,
-  GoldDivider,
   Orbs,
   Reveal,
   Section,
@@ -14,14 +13,12 @@ import {
   bookQuote,
   chapters,
   faq,
-  featuredQuote,
   genres,
   hero,
   reviews,
   site,
   synopsis,
   themes,
-  whyIWrote,
 } from "@/data/content";
 import {
   Accordion,
@@ -139,20 +136,6 @@ function Structure() {
   );
 }
 
-function EditorialNote() {
-  return (
-    <Section className="bg-background">
-      <Reveal className="mx-auto max-w-4xl p-10 text-center sm:p-14">
-        <p className="eyebrow">{whyIWrote.eyebrow}</p>
-        <h2 className="display mt-6 text-4xl sm:text-5xl">{featuredQuote.text}</h2>
-        <GoldDivider className="mt-8" />
-        <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-          {whyIWrote.paragraphs[0]}
-        </p>
-      </Reveal>
-    </Section>
-  );
-}
 
 function Reviews() {
   return (
@@ -201,10 +184,9 @@ export function BookPage() {
     <>
       <BookHero />
       <Summary />
-      <QuoteBlock text={bookQuote.text} attribution={bookQuote.attribution} />
+      <QuoteBlock text={bookQuote.text} attribution={bookQuote.attribution} eyebrow="A Message from the Author" />
       <ThemeCards />
       <Structure />
-      <EditorialNote />
       <Faq />
     </>
   );

@@ -65,12 +65,15 @@ export function FormatsSection({
   );
 }
 
-export function QuoteBlock({ text, attribution }: { text: string; attribution: string }) {
+export function QuoteBlock({ text, attribution, eyebrow }: { text: string; attribution: string; eyebrow?: string }) {
   return (
     <Section className="surface-midnight">
       <div className="relative mx-auto max-w-4xl text-center">
         <QuoteMark className="absolute -top-20 left-1/2 -translate-x-1/2 text-[10rem] leading-none sm:-top-24 sm:text-[14rem]" />
         <Reveal>
+          {eyebrow && (
+            <p className="eyebrow mb-8 text-white/60">{eyebrow}</p>
+          )}
           <p className="display text-3xl italic leading-[1.25] text-gold sm:text-4xl lg:text-5xl">{text}</p>
           <GoldDivider className="mt-12" />
           <p className="mt-8 text-[0.7rem] uppercase tracking-[0.38em] text-white/55">
