@@ -208,8 +208,8 @@ function Themes() {
       </div>
       <Stagger className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {themes.map((theme, index) => (
-          <StaggerItem key={theme.title}>
-            <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,25,37,0.92),rgba(8,17,27,0.98))] p-8 text-card-foreground shadow-[0_30px_70px_-50px_rgba(0,0,0,0.8)] transition-all duration-700 hover:-translate-y-2 hover:border-primary/45">
+          <StaggerItem key={theme.title} className="h-full">
+            <div className="group relative h-full overflow-hidden rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,25,37,0.92),rgba(8,17,27,0.98))] p-8 text-card-foreground shadow-[0_30px_70px_-50px_rgba(0,0,0,0.8)] transition-all duration-700 hover:-translate-y-2 hover:border-primary/45">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
               <span className="display text-sm tracking-[0.3em] text-primary">
                 {String(index + 1).padStart(2, "0")}
