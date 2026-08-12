@@ -7,8 +7,8 @@ import { CursorSpotlight, ScrollProgress } from "@/components/lux";
 import { RouteStateProvider, matchPath, useCurrentLocation } from "@/lib/router";
 import { AboutPage } from "@/routes/about";
 import { BookPage } from "@/routes/book";
-import { BookDetailPage } from "@/routes/books.$slug";
 import { ContactPage } from "@/routes/contact";
+import { GalleryPage } from "@/routes/gallery";
 import { HomePage } from "@/routes/index";
 
 type RouteDefinition = {
@@ -18,11 +18,11 @@ type RouteDefinition = {
 };
 
 const routes: RouteDefinition[] = [
-  { path: "/", title: "The Spirit of Love | A Memoir by Stella Denise Solano", component: HomePage },
-  { path: "/about", title: "About Stella Denise Solano | Author of The Spirit of Love", component: AboutPage },
-  { path: "/book", title: "The Spirit of Love | The Memoir | Stella Denise Solano", component: BookPage },
-  { path: "/contact", title: "Contact | Stella Denise Solano, Author", component: ContactPage },
-  { path: "/books/$slug", title: "Book Details | Stella Denise Solano", component: BookDetailPage },
+  { path: "/", title: "When One Door Opens | Robert Poston", component: HomePage },
+  { path: "/about", title: "About Robert Poston | When One Door Opens", component: AboutPage },
+  { path: "/book", title: "About the Book | When One Door Opens", component: BookPage },
+  { path: "/gallery", title: "Gallery | When One Door Opens", component: GalleryPage },
+  { path: "/contact", title: "Contact | Robert Poston", component: ContactPage },
 ];
 
 function NotFoundPage() {
@@ -75,8 +75,8 @@ function RoutedPage() {
   }
 
   return (
-    <RouteStateProvider path={location.path} params={{}}>
-      <DocumentTitle title="Page Not Found | Stella Denise Solano" />
+      <RouteStateProvider path={location.path} params={{}}>
+      <DocumentTitle title="Page Not Found | When One Door Opens" />
       <main>
         <NotFoundPage />
       </main>

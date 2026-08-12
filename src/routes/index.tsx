@@ -1,6 +1,5 @@
+import { ArrowRight, BookOpen, HeartHandshake, Leaf, Trees } from "lucide-react";
 import { Link } from "@/lib/router";
-import { Star } from "lucide-react";
-import { ArrowDown } from "lucide-react";
 import {
   Botanical,
   GoldDivider,
@@ -13,162 +12,215 @@ import {
   Stagger,
   StaggerItem,
 } from "@/components/lux";
-import {
-  BookCollectionSection,
-  BookMockup,
-  CtaBanner,
-  FormatsSection,
-  QuoteBlock,
-  TimelineSection,
-} from "@/components/sections/shared";
+import { CtaBanner, QuoteBlock, TimelineSection } from "@/components/sections/shared";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   authorBio,
-  books,
   featuredQuote,
   hero,
+  homeHighlights,
   journey,
   site,
   synopsis,
-  testimonials,
   themes,
 } from "@/data/content";
-import deskImg from "@/assets/desk.jpg";
+import mistImg from "@/assets/mist.jpg";
 import { withBase } from "@/lib/asset-path";
 
-const stellaPortrait = withBase("/stella-portrait.jpg");
+const portrait = withBase("/author-portrait.jpg");
+const heroBackground = withBase("/hero-door.png");
+const bookCover = withBase("/when-one-door-opens-cover.png");
+const featureIcons = [Leaf, HeartHandshake, Trees, BookOpen];
 
 function Hero() {
   return (
-    <section className="surface-midnight relative grain flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-36">
+    <section className="surface-midnight relative h-screen max-h-screen overflow-hidden border-b border-white/8 pt-20 sm:pt-24">
       <img
-        src={withBase("/sky.png")}
+        src={heroBackground}
         alt=""
         aria-hidden
-        width={1920}
-        height={1280}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
+        width={1536}
+        height={1024}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[72%_center]"
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, oklch(0.19 0.032 260 / 0.70) 0%, oklch(0.19 0.032 260 / 0.45) 45%, oklch(0.19 0.032 260 / 0.10) 100%)",
+            "linear-gradient(90deg, rgba(4,10,17,0.97) 0%, rgba(4,10,17,0.9) 28%, rgba(4,10,17,0.62) 48%, rgba(4,10,17,0.22) 72%, rgba(4,10,17,0.3) 100%)",
         }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(4,10,17,0.28) 0%, rgba(4,10,17,0.08) 30%, rgba(4,10,17,0.55) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-75"
         style={{ background: "var(--gradient-aurora)" }}
       />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1fr_1.2fr]">
-        <div>
-          <p className="eyebrow">{hero.eyebrow}</p>
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[88rem] items-center px-4 py-4 sm:px-6 sm:py-6">
+        <div className="max-w-[42rem]">
+          <p className="text-[0.68rem] uppercase tracking-[0.34em] text-gold/80 sm:text-[0.75rem] sm:tracking-[0.42em]">
+            {hero.eyebrow}
+          </p>
+          <div className="mt-4 space-y-2 sm:mt-6 sm:space-y-3">
+            <p className="hero-serif text-[1.35rem] uppercase leading-[1.02] tracking-[0.05em] text-gold/92 sm:text-[1.8rem] lg:text-[2.25rem]">
+              Sometimes, what you're
+            </p>
+            <p className="hero-serif text-[1.35rem] uppercase leading-[1.02] tracking-[0.05em] text-gold/92 sm:text-[1.8rem] lg:text-[2.25rem]">
+              looking for is on the
+            </p>
+            <h1 className="hero-serif text-[2.5rem] uppercase leading-[0.9] text-gold sm:text-[3.7rem] lg:text-[5rem]">
+              Other Side
+            </h1>
+            <h2 className="hero-serif text-[2.2rem] uppercase leading-[0.9] text-gold sm:text-[3.35rem] lg:text-[4.5rem]">
+              of <span className="text-primary">Fear.</span>
+            </h2>
+          </div>
 
-          <h1 className="display mt-8 text-[3.25rem] leading-[0.98] sm:text-7xl lg:text-[6.5rem]">
-            {hero.title}
-          </h1>
+          <div className="mt-6 flex items-center gap-3 sm:mt-8 sm:gap-4">
+            <span className="h-px w-12 bg-primary/75 sm:w-20" />
+            <span className="text-primary text-lg sm:text-xl">✦</span>
+            <span className="h-px w-12 bg-primary/75 sm:w-20" />
+          </div>
 
-          <div className="mt-10 h-px w-40 bg-gold/70" />
-
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl text-[0.94rem] leading-7 text-white/80 sm:mt-6 sm:text-base sm:leading-8">
             {hero.body}
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="rounded-full px-9 text-[0.7rem] uppercase tracking-[0.26em]">
-              <a href={books[0].amazonLink} target="_blank" rel="noopener noreferrer">{hero.primaryCta}</a>
-            </Button>
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-border bg-transparent px-9 text-[0.7rem] uppercase tracking-[0.26em] hover:bg-secondary"
+              className="rounded-xl border-primary/55 bg-transparent px-4 py-4 text-[0.75rem] uppercase tracking-[0.13em] text-primary hover:bg-primary/10 hover:text-primary sm:px-6 sm:py-5 sm:text-[0.82rem]"
             >
-              <Link to="/book" hash="chapters">
-                {hero.secondaryCta}
+              <Link to="/book">
+                {hero.primaryCta}
+                <ArrowRight className="h-4 w-4" />
               </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="ghost"
+              className="rounded-xl px-2 py-4 text-[0.75rem] uppercase tracking-[0.12em] text-white/85 hover:bg-white/5 hover:text-gold sm:px-4 sm:py-5 sm:text-[0.82rem]"
+            >
+              <Link to="/about">{hero.secondaryCta}</Link>
             </Button>
           </div>
         </div>
-
-        <div className="relative w-[115%] translate-x-6">
-          <BookMockup />
-        </div>
-      </div>
-
-      <div className="absolute inset-x-0 bottom-10 z-10 flex flex-col items-center gap-3">
-        <span className="text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Scroll</span>
-        <ArrowDown className="h-4 w-4 text-gold" />
       </div>
     </section>
+  );
+}
+
+function HeroHighlights() {
+  return (
+    <section className="relative z-10 border-b border-white/8 bg-[linear-gradient(180deg,rgba(8,20,32,0.88),rgba(7,18,29,0.98))] px-4 py-4 sm:px-6 sm:py-5">
+      <div className="mx-auto grid w-full max-w-[88rem] gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
+        {homeHighlights.map((item, index) => {
+          const Icon = featureIcons[index % featureIcons.length];
+          return (
+            <div
+              key={item.title}
+              className="flex gap-4 border-white/8 xl:border-l xl:pl-8 first:xl:border-l-0 first:xl:pl-0"
+            >
+              <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/8 text-primary sm:h-12 sm:w-12">
+                <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+              </span>
+              <div>
+                <h3 className="hero-serif text-[0.95rem] uppercase leading-[1.12] tracking-[0.04em] text-ivory sm:text-[1.15rem]">
+                  {item.title}
+                </h3>
+                <p className="mt-1 max-w-xs text-xs leading-5 text-white/68 sm:mt-2 sm:text-sm sm:leading-6">{item.body}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function Summary() {
+  return (
+    <Section className="surface-ivory">
+      <Botanical className="right-[-6rem] top-8 hidden h-[24rem] w-[24rem] lg:block" />
+      <div className="mx-auto max-w-[88rem]">
+      <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+        <Parallax amount={30}>
+          <Reveal>
+            <img
+              src={bookCover}
+              alt="Book cover of When One Door Opens"
+              loading="lazy"
+              className="mx-auto h-full min-h-[20rem] w-full max-w-[26rem] object-contain [filter:brightness(0.9)_saturate(0.9)] sm:min-h-[24rem] lg:max-w-[30rem]"
+            />
+          </Reveal>
+        </Parallax>
+        <div>
+          <SectionHeading
+            align="left"
+            eyebrow={synopsis.eyebrow}
+            title={synopsis.heading}
+            className="[&_h2]:max-w-[16ch] [&_h2]:text-gold [&_h2]:text-[2.2rem] sm:[&_h2]:text-5xl lg:[&_h2]:text-6xl"
+          />
+          {synopsis.paragraphs.map((paragraph, index) => (
+            <Reveal key={index} delay={index * 0.08}>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/72">{paragraph}</p>
+            </Reveal>
+          ))}
+          <Reveal delay={0.24}>
+            <Magnetic className="mt-10 block">
+              <Button asChild variant="outline" className="rounded-xl border-primary/55 bg-transparent px-8 text-[0.74rem] uppercase tracking-[0.2em] text-primary hover:bg-primary/10 hover:text-primary">
+                <Link to="/book">{synopsis.cta}</Link>
+              </Button>
+            </Magnetic>
+          </Reveal>
+        </div>
+      </div>
+      </div>
+    </Section>
   );
 }
 
 function Themes() {
   return (
     <Section className="bg-background">
-      <Orbs className="opacity-60" />
-      <SectionHeading
-        eyebrow="Story Themes"
-        title="Four threads woven through the novel"
-        intro="The Spirit of Love is built around four emotional threads that run through every chapter of Denise's life."
-      />
-      <Stagger className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {themes.map((t, i) => (
-          <StaggerItem key={t.title}>
-            <div className="glass-blue group h-full rounded-3xl p-9 transition-transform duration-700 hover:-translate-y-2">
-              <span className="display text-sm tracking-[0.3em] text-gold">
-                {String(i + 1).padStart(2, "0")}
+      <div className="mx-auto max-w-[88rem]">
+      <div className="text-center">
+        <p className="eyebrow mb-5">Core Themes</p>
+        <h2 className="display text-4xl text-gold sm:text-5xl lg:text-6xl">
+          Darkness, warning, and new beginnings
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70">
+          The visual identity now follows the same emotional language as the hero artwork: midnight atmosphere, green life, and gold-lit consequence.
+        </p>
+        <GoldDivider className="mt-8" />
+      </div>
+      <Stagger className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {themes.map((theme, index) => (
+          <StaggerItem key={theme.title}>
+            <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,25,37,0.92),rgba(8,17,27,0.98))] p-8 text-card-foreground shadow-[0_30px_70px_-50px_rgba(0,0,0,0.8)] transition-all duration-700 hover:-translate-y-2 hover:border-primary/45">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+              <span className="display text-sm tracking-[0.3em] text-primary">
+                {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="display mt-6 text-4xl">{t.title}</h3>
-              {/* EDIT: Replace theme description */}
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
+              <h3 className="display mt-5 text-3xl text-gold">{theme.title}</h3>
+              <div className="mt-5 h-px w-16 bg-gold/35 transition-all duration-700 group-hover:w-24 group-hover:bg-primary/55" />
+              <p className="mt-5 text-sm leading-7 text-white/68">{theme.body}</p>
             </div>
           </StaggerItem>
         ))}
       </Stagger>
-    </Section>
-  );
-}
-
-function Introduction() {
-  return (
-    <Section className="surface-ivory">
-      <div className="grid items-center gap-16 lg:grid-cols-2">
-        <Parallax amount={40}>
-          <Reveal>
-            <div className="group overflow-hidden rounded-3xl shadow-[0_50px_90px_-60px_oklch(0.2_0.03_262/0.8)]">
-              <img
-                src={deskImg}
-                alt="A fountain pen, handwritten letters and candlelight on a writing desk"
-                loading="lazy"
-                width={1008}
-                height={1008}
-                className="w-full object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-              />
-            </div>
-          </Reveal>
-        </Parallax>
-        <div>
-          <SectionHeading align="left" eyebrow={synopsis.eyebrow} title={synopsis.heading} />
-          {/* EDIT: Replace with real synopsis */}
-          {synopsis.paragraphs.slice(0, 2).map((p, i) => (
-            <Reveal key={i} delay={0.1 + i * 0.08}>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground">{p}</p>
-            </Reveal>
-          ))}
-          <Reveal delay={0.3}>
-            <Magnetic className="mt-10 block">
-              <Button asChild variant="outline" className="rounded-full border-foreground/20 bg-transparent px-8 text-[0.7rem] uppercase tracking-[0.24em]">
-                <Link to="/book">{synopsis.cta}</Link>
-              </Button>
-            </Magnetic>
-          </Reveal>
-        </div>
       </div>
     </Section>
   );
@@ -176,104 +228,72 @@ function Introduction() {
 
 function AuthorPreview() {
   return (
-    <Section className="bg-background">
-      <Botanical className="right-[-8rem] top-10 hidden h-[26rem] w-[26rem] lg:block" />
-      <div className="grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-        <Parallax amount={30}>
-          <Reveal>
-            <div className="group relative overflow-hidden rounded-3xl">
-              <img
-                src={stellaPortrait}
-                alt={`Portrait of ${site.author}`}
-                loading="lazy"
-                width={1008}
-                height={1264}
-                className="w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-              />
-              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-midnight/70 to-transparent" />
-            </div>
-          </Reveal>
-        </Parallax>
+    <Section className="surface-pearl">
+      <div className="mx-auto max-w-[88rem]">
+      <div className="grid items-center gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16">
+        <Reveal>
+          <div className="group overflow-hidden rounded-[2rem] border border-gold/15 bg-[#08111a] shadow-[0_45px_100px_-60px_rgba(0,0,0,0.95)]">
+            <img
+              src={portrait}
+              alt={`Portrait placeholder for ${site.author}`}
+              loading="lazy"
+              className="w-full object-cover transition-transform duration-[1600ms] [filter:brightness(0.92)_saturate(0.9)] group-hover:scale-105"
+            />
+          </div>
+        </Reveal>
         <div>
-          <SectionHeading align="left" eyebrow={authorBio.eyebrow} title={authorBio.name} />
-          {/* EDIT: Replace author biography */}
-          {authorBio.short.map((p, i) => (
-            <Reveal key={i} delay={0.1 + i * 0.08}>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground">{p}</p>
+          <SectionHeading
+            align="left"
+            eyebrow={authorBio.eyebrow}
+            title={authorBio.name}
+            className="[&_h2]:text-gold"
+          />
+          {authorBio.short.map((paragraph, index) => (
+            <Reveal key={index} delay={index * 0.08}>
+              <p className="mt-6 text-base leading-8 text-white/72">{paragraph}</p>
             </Reveal>
           ))}
-          <Reveal delay={0.3}>
+          <Reveal delay={0.24}>
             <Magnetic className="mt-10 block">
-              <Button asChild className="rounded-full px-8 text-[0.7rem] uppercase tracking-[0.24em]">
+              <Button asChild className="rounded-xl bg-primary px-8 text-[0.74rem] uppercase tracking-[0.2em] text-primary-foreground hover:bg-primary/90">
                 <Link to="/about">{authorBio.cta}</Link>
               </Button>
             </Magnetic>
           </Reveal>
         </div>
       </div>
+      </div>
     </Section>
   );
 }
 
-function Testimonials() {
+function AtmosphereStrip() {
   return (
-    <Section className="bg-background">
-      <SectionHeading eyebrow="Praise" title="What readers are saying" />
-      <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
-        {testimonials.map((t) => (
-          <StaggerItem key={t.name}>
-            <figure className="glass h-full rounded-3xl p-9">
-              <div className="flex gap-1 text-gold">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                ))}
-              </div>
-              {/* EDIT: Replace testimonials */}
-              <blockquote className="display mt-7 text-2xl italic leading-snug">{t.quote}</blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-xs tracking-widest text-gold">
-                  {t.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-                <span>
-                  <span className="block text-sm">{t.name}</span>
-                  <span className="block text-xs tracking-[0.2em] text-muted-foreground">{t.role}</span>
-                </span>
-              </figcaption>
-            </figure>
-          </StaggerItem>
-        ))}
-      </Stagger>
-    </Section>
-  );
-}
-
-function Newsletter() {
-  return (
-    <Section className="bg-background">
-      <Orbs className="opacity-70" />
-      <Reveal className="glass-blue relative mx-auto max-w-3xl rounded-[2rem] p-10 text-center sm:p-16">
-        <GoldDivider className="mb-10 max-w-[10rem]" />
-        <h2 className="display text-4xl sm:text-5xl">Join the Reader Circle</h2>
-        {/* EDIT: Replace newsletter copy */}
-        <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Receive a personal note from Denise, early access to new writing, reflections on faith and survival, and the bonus chapter available only to subscribers. No noise   only words worth reading.
-        </p>
-        <form
-          className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <Input type="email" required placeholder="Your email" aria-label="Email address" className="rounded-full" />
-          <Button type="submit" className="rounded-full px-8 text-[0.7rem] uppercase tracking-[0.24em]">
-            Subscribe
-          </Button>
-        </form>
-        <p className="mt-6 text-xs tracking-[0.2em] text-muted-foreground">
-          Bonus chapter sent instantly · No noise, ever
-        </p>
-      </Reveal>
+    <Section className="surface-ivory">
+      <div className="mx-auto max-w-[88rem]">
+      <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+        <Reveal>
+          <div>
+            <p className="eyebrow">Visual Mood</p>
+            <h3 className="display mt-5 text-4xl text-gold">A threshold lit by hope</h3>
+            <div className="mt-5 h-px w-20 bg-primary/55" />
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/72">
+              The home page now takes its tone directly from the door artwork: deep night blues, mossy greens, warm gold typography, and a sense of stepping into something transformative.
+            </p>
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="mx-auto max-w-[22rem] overflow-hidden rounded-[2rem] border border-gold/15 shadow-[0_45px_100px_-60px_rgba(0,0,0,0.95)] sm:max-w-[24rem] lg:max-w-[26rem]">
+            <img
+              src={mistImg}
+              alt="Misty forest suggesting renewal and uncertainty"
+              loading="lazy"
+              className="h-full w-full object-cover [filter:brightness(0.82)_saturate(0.9)]"
+            />
+          </div>
+        </Reveal>
+      </div>
+      </div>
     </Section>
   );
 }
@@ -282,16 +302,14 @@ export function HomePage() {
   return (
     <>
       <Hero />
-      <Themes />
-      <Introduction />
+      <HeroHighlights />
+      <Summary />
       <QuoteBlock text={featuredQuote.text} attribution={featuredQuote.attribution} />
+      <Themes />
       <AuthorPreview />
-      <BookCollectionSection />
-      <FormatsSection />
-      <Testimonials />
-      <TimelineSection eyebrow="Reader Journey" title="Four movements of the story" items={journey} />
-      <Newsletter />
-      <CtaBanner headline="Your Next Favorite Story Awaits" cta="Get the Book" href={books[0].amazonLink} />
+      <TimelineSection eyebrow="Story Arc" title="Four doors in Robert's journey" items={journey} />
+      <AtmosphereStrip />
+      <CtaBanner headline="Step Into the Story Behind the Crash" cta="About the Book" to="/book" />
     </>
   );
 }

@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 import book2 from "@/assets/book-collection-2.jpg";
 import book3 from "@/assets/book-collection-3.jpg";
 
-const bookImages = [withBase("/book-cover.png"), book2, book3];
+const bookImages = [withBase("/when-one-door-opens-cover.png"), book2, book3];
 
 const formatIcons = [BookMarked, BookOpen, Tablet, Headphones];
 
@@ -67,19 +67,13 @@ export function FormatsSection({
 
 export function QuoteBlock({ text, attribution }: { text: string; attribution: string }) {
   return (
-    <Section className="surface-midnight grain">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-80"
-        style={{ background: "var(--gradient-aurora)" }}
-      />
-      <Particles />
+    <Section className="surface-midnight">
       <div className="relative mx-auto max-w-4xl text-center">
-        <QuoteMark className="absolute -top-24 left-1/2 -translate-x-1/2 text-[14rem] leading-none" />
+        <QuoteMark className="absolute -top-20 left-1/2 -translate-x-1/2 text-[10rem] leading-none sm:-top-24 sm:text-[14rem]" />
         <Reveal>
-          <p className="display text-3xl italic leading-[1.25] sm:text-4xl lg:text-5xl">{text}</p>
+          <p className="display text-3xl italic leading-[1.25] text-gold sm:text-4xl lg:text-5xl">{text}</p>
           <GoldDivider className="mt-12" />
-          <p className="mt-8 text-[0.7rem] uppercase tracking-[0.38em] text-muted-foreground">
+          <p className="mt-8 text-[0.7rem] uppercase tracking-[0.38em] text-white/55">
             {attribution}
           </p>
         </Reveal>
@@ -101,8 +95,9 @@ export function TimelineSection({
 }) {
   return (
     <Section className={cn("bg-background overflow-hidden", className)}>
-      <SectionHeading eyebrow={eyebrow} title={title} />
-      <div className="relative mx-auto mt-24 max-w-6xl">
+      <div className="mx-auto max-w-[88rem]">
+      <SectionHeading eyebrow={eyebrow} title={title} className="[&_h2]:text-gold" />
+      <div className="relative mx-auto mt-20 max-w-6xl">
         <div className="pointer-events-none absolute inset-0 hidden sm:block">
           <div
             aria-hidden
@@ -116,10 +111,11 @@ export function TimelineSection({
               <Reveal key={item.title} delay={i * 0.1}>
                 <div
                   className={cn(
-                    "group relative overflow-hidden rounded-3xl border border-white/10 bg-midnight p-10 transition-all duration-700 hover:-translate-y-2 hover:border-gold/50",
+                    "group relative overflow-hidden rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,25,37,0.92),rgba(8,17,27,0.98))] p-8 shadow-[0_30px_70px_-50px_rgba(0,0,0,0.8)] transition-all duration-700 hover:-translate-y-2 hover:border-primary/45 sm:p-10",
                     i % 2 === 1 ? "sm:mt-16" : "",
                   )}
                 >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
                   <div className="absolute -right-6 -top-6 flex h-24 w-24 items-center justify-center rounded-full border border-gold/10">
                     <span className="display text-5xl font-bold tracking-tight text-gold/15">
                       {stepNum}
@@ -127,16 +123,16 @@ export function TimelineSection({
                   </div>
                   <div className="relative">
                     <div className="flex items-center gap-4">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-lg font-semibold tracking-wider text-gold">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-lg font-semibold tracking-wider text-primary">
                         {stepNum}
                       </span>
-                      <div className="h-px flex-1 bg-gradient-to-r from-gold/50 to-transparent" />
+                      <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
                     </div>
-                    <h3 className="display mt-8 text-3xl text-white">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                    <div className="mt-8 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.3em] text-gold/60">
+                    <h3 className="display mt-8 text-3xl text-gold">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-white/68">{item.body}</p>
+                    <div className="mt-8 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.3em] text-primary/70">
                       <span>Movement {stepNum}</span>
-                      <span className="h-px w-8 bg-gold/30" />
+                      <span className="h-px w-8 bg-primary/30" />
                     </div>
                   </div>
                 </div>
@@ -144,6 +140,7 @@ export function TimelineSection({
             );
           })}
         </div>
+      </div>
       </div>
     </Section>
   );
@@ -162,18 +159,13 @@ export function CtaBanner({
 }) {
   return (
     <Section className="surface-midnight grain text-center">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{ background: "var(--gradient-aurora)" }}
-      />
-      <Particles />
-      <Reveal className="relative mx-auto max-w-3xl">
-        <h2 className="display text-4xl sm:text-6xl lg:text-7xl">{headline}</h2>
+      <Reveal className="relative mx-auto max-w-[88rem]">
+        <div className="mx-auto max-w-4xl px-6 py-14 sm:px-10 lg:px-16">
+        <h2 className="display text-4xl text-gold sm:text-6xl lg:text-7xl">{headline}</h2>
         <GoldDivider className="mt-10" />
         <div className="mt-12 flex justify-center">
           <Magnetic>
-            <Button asChild size="lg" className="rounded-full px-10 text-[0.7rem] uppercase tracking-[0.28em]">
+            <Button asChild size="lg" className="rounded-xl bg-primary px-10 text-[0.72rem] uppercase tracking-[0.22em] text-primary-foreground hover:bg-primary/90">
               {href ? (
                 <a href={href} target="_blank" rel="noopener noreferrer">{cta}</a>
               ) : (
@@ -181,6 +173,7 @@ export function CtaBanner({
               )}
             </Button>
           </Magnetic>
+        </div>
         </div>
       </Reveal>
     </Section>
@@ -191,21 +184,21 @@ export function BookMockup({ className, floating = true }: { className?: string;
   const reduce = useReducedMotion();
   return (
     <motion.div
-      className={cn("relative", className)}
+      className={cn("relative mx-auto w-full max-w-[25rem] lg:max-w-[28rem]", className)}
       animate={reduce || !floating ? undefined : { y: [0, -24, 0], rotateZ: [-1, 1, -1] }}
       transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       style={{ perspective: 1200 }}
     >
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 scale-75 rounded-full bg-gold/20 blur-[100px]"
+        className="absolute inset-0 -z-10 scale-75 rounded-full bg-gold/12 blur-[90px]"
       />
       <img
-        src={withBase("/book-cover.png")}
-        alt="Hardcover edition of The Spirit of Love"
+        src={withBase("/when-one-door-opens-cover.png")}
+        alt="Hardcover edition of When One Door Opens"
         width={1200}
         height={1504}
-        className="relative w-full drop-shadow-[0_60px_80px_rgba(0,0,0,0.6)]"
+        className="relative w-full drop-shadow-[0_50px_70px_rgba(0,0,0,0.58)] [filter:brightness(0.84)_saturate(0.88)_contrast(0.96)]"
       />
     </motion.div>
   );

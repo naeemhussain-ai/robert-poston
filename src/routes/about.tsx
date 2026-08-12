@@ -1,11 +1,7 @@
-import { useState } from "react";
-import { X } from "lucide-react";
 import {
   Botanical,
   GoldDivider,
   Orbs,
-  Parallax,
-  Particles,
   Reveal,
   Section,
   SectionHeading,
@@ -14,24 +10,11 @@ import {
   WordReveal,
 } from "@/components/lux";
 import { CtaBanner, QuoteBlock, TimelineSection } from "@/components/sections/shared";
-import { authorBio, authorTimeline, awards, philosophy, site } from "@/data/content";
+import { authorBio, authorTimeline, philosophy, site } from "@/data/content";
 import deskImg from "@/assets/desk.jpg";
-import libraryImg from "@/assets/library.jpg";
-import mistImg from "@/assets/mist.jpg";
-import petalsImg from "@/assets/petals.jpg";
-import readingRoomImg from "@/assets/reading-room.jpg";
 import { withBase } from "@/lib/asset-path";
 
-const stellaPortrait = withBase("/stella-portrait.jpg");
-
-const gallery = [
-  { src: libraryImg, alt: "A candlelit historic library at dusk" },
-  { src: petalsImg, alt: "White rose petals resting on parchment" },
-  { src: deskImg, alt: "Fountain pen and handwritten letters by candlelight" },
-  { src: mistImg, alt: "Light through a misty forest at dawn" },
-  { src: readingRoomImg, alt: "A velvet armchair in a moonlit reading room" },
-  { src: stellaPortrait, alt: `${site.author}` },
-];
+const portrait = withBase("/author-portrait.jpg");
 
 function AboutHero() {
   return (
@@ -44,33 +27,31 @@ function AboutHero() {
         height={1280}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
       />
+      <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-midnight)", opacity: 0.82 }} />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "var(--gradient-aurora)" }} />
-      <Particles />
+
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="eyebrow">The Author</p>
+          <p className="eyebrow">About the Author</p>
           <h1 className="display mt-8 text-5xl leading-[1] sm:text-7xl lg:text-8xl">
             <WordReveal text={site.author} />
           </h1>
           <GoldDivider className="ml-0 mt-10 max-w-[12rem]" />
-          {/* EDIT: Replace author introduction */}
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
             {authorBio.short[0]}
           </p>
         </div>
-        <Parallax amount={30}>
-          <Reveal>
-            <div className="group overflow-hidden rounded-[2rem] shadow-[var(--shadow-lux)]">
-              <img
-                src={stellaPortrait}
-                alt={`Portrait of ${site.author}`}
-                width={1008}
-                height={1264}
-                className="w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-              />
-            </div>
-          </Reveal>
-        </Parallax>
+        <Reveal>
+          <div className="overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-lux)]">
+            <img
+              src={portrait}
+              alt={`Portrait placeholder for ${site.author}`}
+              width={1008}
+              height={1264}
+              className="w-full object-cover"
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -81,14 +62,11 @@ function Biography() {
     <Section className="surface-ivory">
       <Botanical className="left-[-7rem] top-16 hidden h-[24rem] w-[24rem] lg:block" />
       <div className="mx-auto max-w-3xl">
-        <SectionHeading align="left" eyebrow="Biography" title="A life spent listening for stories" />
-        {/* EDIT: Replace author biography */}
-        {authorBio.long.map((p, i) => (
-          <Reveal key={i} delay={i * 0.06}>
-            <p
-              className={`mt-8 text-lg leading-[1.9] text-foreground/80 ${i === 0 ? "dropcap" : ""}`}
-            >
-              {p}
+        <SectionHeading align="left" eyebrow="Biography" title="A voice drawn to consequence, faith, and renewal" />
+        {authorBio.long.map((paragraph, index) => (
+          <Reveal key={index} delay={index * 0.06}>
+            <p className={`mt-8 text-lg leading-[1.9] text-foreground/80 ${index === 0 ? "dropcap" : ""}`}>
+              {paragraph}
             </p>
           </Reveal>
         ))}
@@ -101,15 +79,14 @@ function Philosophy() {
   return (
     <Section className="bg-background">
       <Orbs className="opacity-70" />
-      <SectionHeading eyebrow="Craft" title="Philosophy, mission and vision" />
+      <SectionHeading eyebrow="Perspective" title="How the work is grounded" />
       <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
-        {philosophy.map((p) => (
-          <StaggerItem key={p.title}>
+        {philosophy.map((item) => (
+          <StaggerItem key={item.title}>
             <div className="glass-blue h-full rounded-3xl p-10 transition-transform duration-700 hover:-translate-y-2">
-              <h3 className="display text-3xl">{p.title}</h3>
+              <h3 className="display text-3xl">{item.title}</h3>
               <div className="hairline my-6" />
-              {/* EDIT: Replace philosophy copy */}
-              <p className="text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
             </div>
           </StaggerItem>
         ))}
@@ -118,71 +95,30 @@ function Philosophy() {
   );
 }
 
-function Gallery() {
-  const [active, setActive] = useState<number | null>(null);
+function WritingTable() {
   return (
     <Section className="surface-pearl">
-      <SectionHeading eyebrow="Gallery" title="The world around the writing" />
-      <div className="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {gallery.map((img, i) => (
-          <Reveal key={img.src} delay={i * 0.05}>
-            <button
-              type="button"
-              onClick={() => setActive(i)}
-              className="group block w-full overflow-hidden rounded-2xl shadow-[0_30px_60px_-45px_oklch(0.2_0.03_262/0.7)]"
-              aria-label={`View image: ${img.alt}`}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className="h-72 w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-              />
-            </button>
-          </Reveal>
-        ))}
-      </div>
-
-      {active !== null ? (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-midnight/90 p-6 backdrop-blur-xl"
-          onClick={() => setActive(null)}
-        >
-          <button
-            type="button"
-            aria-label="Close"
-            className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-ivory/30 text-ivory"
-            onClick={() => setActive(null)}
-          >
-            <X className="h-4 w-4" />
-          </button>
-          <img
-            src={gallery[active].src}
-            alt={gallery[active].alt}
-            className="max-h-[82vh] w-auto rounded-2xl shadow-[var(--shadow-lux)]"
-          />
+      <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        <Reveal>
+          <div className="overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-lux)]">
+            <img
+              src={deskImg}
+              alt="Writing desk with candlelight and letters"
+              loading="lazy"
+              className="w-full object-cover"
+            />
+          </div>
+        </Reveal>
+        <div>
+          <SectionHeading align="left" eyebrow="Creative Atmosphere" title="Stories written at the edge of warning and grace" />
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            This author page now supports a darker, more reflective presentation that fits the spiritual-drama tone of the new book. It can easily absorb fuller biography details, press material, or a personal note from the author later.
+          </p>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            If you share a final portrait or any author-specific media, we can replace the current placeholder visuals without changing the page structure.
+          </p>
         </div>
-      ) : null}
-    </Section>
-  );
-}
-
-function Awards() {
-  return (
-    <Section className="bg-background">
-      <SectionHeading eyebrow="Recognition" title="Awards and honours" />
-      <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
-        {awards.map((a) => (
-          <StaggerItem key={a.title}>
-            <div className="h-full rounded-3xl border border-border bg-card p-10 text-card-foreground transition-colors duration-700 hover:border-gold/50 hover:shadow-lg">
-              <p className="eyebrow">{a.year}</p>
-              <h3 className="display mt-5 text-3xl">{a.title}</h3>
-              {/* EDIT: Replace award details */}
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-            </div>
-          </StaggerItem>
-        ))}
-      </Stagger>
+      </div>
     </Section>
   );
 }
@@ -193,15 +129,13 @@ export function AboutPage() {
       <AboutHero />
       <Biography />
       <QuoteBlock
-        // EDIT: Replace inspirational quote
-        text="I stopped asking God to take me back. I started asking Him to use whatever was left."
+        text="Renewal matters because consequence matters. A second chance only means something when a person chooses differently."
         attribution={site.author}
       />
-      <TimelineSection eyebrow="Milestones" title="A writing life, in chapters" items={authorTimeline} />
+      <TimelineSection eyebrow="Development" title="How the author vision takes shape" items={authorTimeline} />
       <Philosophy />
-      <Gallery />
-      <Awards />
-      <CtaBanner headline="Discover The Spirit of Love" cta="Explore the Book" />
+      <WritingTable />
+      <CtaBanner headline="Discover the Story Behind the Book" cta="About the Book" to="/book" />
     </>
   );
 }

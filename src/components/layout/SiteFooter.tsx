@@ -1,11 +1,12 @@
 import { Link } from "@/lib/router";
-import { Facebook, Instagram, BookOpen, Music2 } from "lucide-react";
+import { Facebook, Instagram, Mail, Youtube } from "lucide-react";
 import { nav, site, socials } from "@/data/content";
 import { GoldDivider } from "@/components/lux";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { withBase } from "@/lib/asset-path";
 
-const icons = [Instagram, Facebook, Music2, BookOpen];
+const icons = [Instagram, Facebook, Youtube, Mail];
 
 export function SiteFooter() {
   return (
@@ -17,13 +18,11 @@ export function SiteFooter() {
       />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-[0.65rem] tracking-[0.2em] text-gold">
-              {site.monogram}
-            </span>
-            <span className="display text-2xl">{site.author}</span>
-          </div>
-          {/* EDIT: Replace footer tagline */}
+          <img
+            src={withBase("/robert-poston-logo.png")}
+            alt={site.author}
+            className="h-12 w-auto"
+          />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">{site.tagline}</p>
           <div className="mt-8 flex gap-3">
             {socials.map((s, i) => {
@@ -33,7 +32,7 @@ export function SiteFooter() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/70 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:text-gold"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/70 transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -56,10 +55,9 @@ export function SiteFooter() {
         </nav>
 
         <div>
-          <p className="eyebrow mb-4">The Reader Circle</p>
+          <p className="eyebrow mb-4">Stay Connected</p>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            {/* EDIT: Replace newsletter blurb */}
-            Personal notes from Denise, early writing, and a bonus chapter   delivered straight to your inbox.
+            Updates about the book, gallery additions, and future author news can live here once the final mailing flow is connected.
           </p>
           <form
             className="mt-6 flex flex-col gap-3 sm:flex-row"
@@ -76,7 +74,7 @@ export function SiteFooter() {
       <GoldDivider className="relative z-10 mt-20 max-w-2xl" />
 
       <p className="relative z-10 mt-8 text-center text-xs tracking-[0.18em] text-muted-foreground">
-        © {new Date().getFullYear()} {site.author} · {site.bookTitle}
+        &copy; {new Date().getFullYear()} {site.author} · {site.bookTitle}
       </p>
     </footer>
   );

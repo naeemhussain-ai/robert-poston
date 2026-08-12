@@ -37,28 +37,28 @@ export function SiteHeader() {
     >
       <div
         className={cn(
-          "mx-auto flex w-full max-w-7xl items-center justify-between px-6 transition-all duration-700",
-          scrolled ? "h-16" : "h-24",
+          "mx-auto flex w-full max-w-[88rem] items-center justify-between px-4 sm:px-6 transition-all duration-700",
+          scrolled ? "h-16" : "h-20 sm:h-24",
         )}
       >
-        <Link to="/" className="group flex items-center gap-3">
+        <Link to="/" className="group flex flex-col items-start justify-center">
           <img
-            src={withBase("/Stella Denise Solano - Logo Design - 02.png")}
+            src={withBase("/robert-poston-logo.png")}
             alt={site.author}
-            className="h-14 w-auto"
+            className="h-9 w-auto sm:h-12"
           />
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-10 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               className={cn(
-                "lux-underline text-[0.7rem] uppercase tracking-[0.28em] transition-colors duration-500",
+                "text-[0.72rem] uppercase tracking-[0.22em] transition-colors duration-500",
                 pathname === item.to
-                  ? "text-gold"
-                  : "text-white/70 hover:text-white",
+                  ? "text-primary"
+                  : "text-white/78 hover:text-gold",
               )}
             >
               {item.label}
@@ -68,8 +68,13 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Magnetic className="hidden sm:inline-block">
-            <Button asChild size="sm" className="rounded-full px-6 text-[0.7rem] uppercase tracking-[0.24em]">
-              <Link to="/book">Get the Book</Link>
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="rounded-xl border-gold/60 bg-transparent px-5 text-[0.68rem] uppercase tracking-[0.18em] text-gold hover:bg-gold/10 hover:text-gold sm:px-6 sm:text-[0.72rem]"
+            >
+              <Link to="/book">Get Your Copy</Link>
             </Button>
           </Magnetic>
 
@@ -78,7 +83,7 @@ export function SiteHeader() {
               <button
                 aria-label="Open menu"
                 className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-full border md:hidden",
+                  "flex h-10 w-10 items-center justify-center rounded-full border lg:hidden",
                   "border-white/30 text-white",
                 )}
               >
@@ -112,7 +117,7 @@ export function SiteHeader() {
                       transition={{ delay: 0.5, duration: 0.8 }}
                     >
                       <Button asChild className="mt-6 w-full rounded-full">
-                        <Link to="/book">Get the Book</Link>
+                        <Link to="/book">Get Your Copy</Link>
                       </Button>
                     </motion.div>
                   </motion.nav>

@@ -3,332 +3,322 @@
  */
 
 export const site = {
-  bookTitle: "The Spirit of Love",
-  author: "Stella Denise Solano",
-  monogram: "SDS",
-  tagline: "One woman's journey from silence and survival toward faith, love, and purpose.",
+  bookTitle: "When One Door Opens",
+  author: "Robert Poston",
+  monogram: "RP",
+  tagline: "A spiritual drama about second chances, consequence, and the courage to choose a better door.",
 } as const;
 
 export const nav = [
   { label: "Home", to: "/" },
-  { label: "About Author", to: "/about" },
-  { label: "Book", to: "/book" },
+  { label: "About the Author", to: "/about" },
+  { label: "About the Book", to: "/book" },
+  { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
 export const socials = [
   { label: "Instagram", href: "#" },
   { label: "Facebook", href: "#" },
-  { label: "TikTok", href: "#" },
-  { label: "Goodreads", href: "#" },
+  { label: "YouTube", href: "#" },
+  { label: "Email", href: "mailto:contact@example.com" },
 ] as const;
 
 export const hero = {
-  eyebrow: "A Memoir of Survival, Faith & Love",
+  eyebrow: "A Spiritual Drama of Second Chances",
   title: site.bookTitle,
-  body: "At sixty-four, Stella Denise Solano looks back on a life shaped by abandonment, betrayal, and an unwavering faith that guided her through every storm. The Spirit of Love is a raw and redemptive memoir about surviving what no one speaks aloud   and choosing love, again and again, until it finally stays.",
-  primaryCta: "Discover the Story",
-  secondaryCta: "Read Preview",
+  body: "Life has a way of closing things off without warning. But when one door opens, it does not just lead to a new place. It leads to a new you.",
+  primaryCta: "Discover the Journey",
+  secondaryCta: "About the Book",
 };
 
 export const themes = [
   {
-    title: "Love",
-    body: "From a child who longed to be wanted to a woman who refused to stop believing, this memoir traces every form of love   given, lost, withheld, and finally, freely chosen.",
+    title: "Renewal",
+    body: "The story returns again and again to the possibility of beginning again, even after loss, guilt, or devastating failure.",
   },
   {
-    title: "Destiny",
-    body: "Denise's life unfolds as a series of moments she could not have planned   a childhood near-tragedy, a marriage that healed and then broke, a voice that kept calling her forward. Faith reveals the pattern only in hindsight.",
+    title: "Choice",
+    body: "Destiny may reveal patterns, but every life in the novel insists that people remain responsible for the doors they open for themselves.",
   },
   {
-    title: "Hope",
-    body: "Even in the years of silence and disappearing, Denise kept a small, unspoken belief that life was not finished with her. That belief became the foundation for every new beginning.",
+    title: "Faith",
+    body: "Prayer, spiritual warning, unseen guidance, and moral reckoning shape the emotional heart of the book without reducing it to easy answers.",
   },
   {
-    title: "Healing",
-    body: "True healing, Denise discovers, is not the absence of pain. It is the courage to name what happened, to choose differently, and to trust that the wounds you carry can become wisdom you pass on.",
+    title: "Consequence",
+    body: "Each decision echoes forward, touching relationships, identity, grief, and even the next chapter of the soul's journey.",
   },
 ];
 
 export const synopsis = {
-  eyebrow: "The Memoir",
-  heading: "A life survived in silence   and the faith that made it mean something",
+  eyebrow: "Book Summary",
+  heading: "A crash, a coma, and the lives waiting behind the next door",
   paragraphs: [
-    "At sixty-four, Stella Denise Solano sits with a life that often felt like a dream   not because it was easy, but because so much of it was survived in silence, in dissociation, in a quiet inner world that protected her long before she understood what protection meant. Born into poverty on a family ranch, shuffled between relatives across California and Mexico, and shaped by an early encounter with death that convinced her she had been kept alive for a reason, Denise grew up learning to disappear rather than belong.",
-    "Through marriage, motherhood, betrayal, and loss, she became a woman who provided for everyone but herself. She raised a daughter, cared for a niece, built a career in the flower industry, and turned her home into a gathering place for nearly a hundred family members   all while carrying wounds she had never been given language for. Her first marriage ended in heartbreak. Her second, a true love story built over twenty years, ended in grief. And in the silence that followed, she began to hear something she had been listening for her whole life.",
-    "The Spirit of Love is a memoir of spiritual awakening told through the most ordinary and extraordinary details of one woman's life. It is about what faith looks like when you are too exhausted to perform it   when it is only prayer in the dark, footsteps heard after loss, and a voice telling you to continue. Denise writes for every person who has survived something they have never spoken aloud, who has mistaken their strength for hardness, and who wonders whether love   real, gentle, chosen love   is something they still deserve.",
+    "When One Door Opens centers on Robert, an operating-room nurse in Denver who is still trying to rebuild his life after divorce, distance from his children, and years of quiet emotional strain. Just as companionship and fragile hope begin to return, a small-plane crash leaves him gravely injured and suspended between life and death.",
+    "Inside that threshold, Robert experiences a chain of connected lives stretching across decades and spiritual debts. He is drawn through earlier identities, father-son bonds, moral failures, and warnings ignored, slowly realizing that pain may repeat across lifetimes when truth, gratitude, and responsibility are refused.",
+    "As Robert awakens, the novel shifts from mystery to reckoning. Recovery becomes more than survival: it becomes a test of humility, repair, and free will. The question at the center of the story is not whether fate exists, but whether a person will finally choose the better door once it opens.",
   ],
-  cta: "Read Full Synopsis",
+  cta: "Read About the Book",
 };
 
 export const featuredQuote = {
-  text: "Every trial I survived was not a punishment. It was a lesson. And every lesson was quietly building the woman I was always meant to become.",
-  attribution: site.author,
+  text: "Destiny may reveal a pattern, but it never removes personal responsibility.",
+  attribution: site.bookTitle,
 };
 
 export const authorBio = {
   eyebrow: "The Author",
   name: site.author,
   short: [
-    "Stella Denise Solano is the author of The Spirit of Love, a spiritual memoir published by Miramax Books. Born in rural California and raised between ranch life and city relatives, she spent decades working in the floral industry, raising her daughter, and building the kind of home she once dreamed of as a child.",
-    "At sixty-four, she writes with the clarity of someone who has survived abandonment, betrayal, addiction in those she loved, and extraordinary loss   and come through each trial with deeper faith and a renewed belief in love. She lives in California and is at work on her next book.",
+    "Robert Poston writes fiction rooted in spiritual tension, emotional consequence, and the life-changing weight of ordinary human choices. His storytelling blends intimate personal struggle with expansive questions about faith, destiny, and moral accountability.",
+    "In When One Door Opens, Robert builds a dramatic world that moves across time, memory, and the unseen realm while keeping its emotional center grounded in family, grief, love, and redemption.",
   ],
   long: [
-    "Stella Denise Solano was born into a large, close-knit, and complicated family on a California ranch, where her grandmother converted a garage into a small two-bedroom home for five children. Life was full of gardens, fruit trees, animals, and homemade tortillas   and also of poverty, instability, and the early feeling of being somewhere she did not quite belong. From childhood, she moved in a dreamlike state, spending summers with relatives across California and Mexico, learning to remain quiet and useful, and slowly separating herself from her own feelings in order to survive.",
-    "As a young woman, Denise entered the workforce, raised her daughter after a difficult first marriage, and built a career in the floral industry that allowed her to become fully financially independent. She remarried, created a home where extended family gathered in their dozens every holiday, and believed for a time that the hard years were behind her. Then her second husband's hidden struggles with alcohol began to surface, and she became a caregiver, an advocate, and eventually a widow   navigating grief with the same quiet endurance that had carried her through every earlier loss.",
-    "In the years that followed, Denise found her spiritual life expanding beyond the Catholic framework of her childhood. She began speaking directly to God, to angels, to the universe, and to the presence she believed her second husband left behind. A difficult relationship that followed pushed her to leave everything familiar and start again   nine hours away, in a new city, with only her intuition to guide her. It was in that solitude that she finally began writing in earnest.",
-    "The Spirit of Love is her first memoir, and it is addressed to everyone who has ever survived something in silence. Denise writes as a woman who has made peace with being the black sheep   who now understands that she was always a chosen child. She speaks directly to survivors of abandonment, betrayal, and grief, and offers the only truth she has earned: that love is not only worth believing in. It is worth choosing, again and again, until it finally stays.",
+    "Robert Poston is the author of When One Door Opens, a spiritual drama shaped by questions of free will, unseen guidance, and the emotional cost of the choices people live with long after the moment has passed. His work is drawn toward characters standing at thresholds: between hope and despair, certainty and warning, life and whatever waits beyond it.",
+    "His storytelling voice favors emotionally direct scenes, moral tension, and layered timelines that gradually reveal how the past keeps pressing on the present. Rather than treating the spiritual world as abstraction, Robert uses it as a dramatic force that illuminates human weakness, longing, courage, and responsibility.",
+    "When One Door Opens reflects his interest in stories where renewal is possible but never automatic. Redemption in his work is not handed out lightly; it has to be chosen, often after grief, consequence, and painful self-recognition. That perspective gives the novel its darker atmosphere as well as its sense of earned hope.",
   ],
-  cta: "Meet Stella Denise Solano",
+  cta: "Read the Author Story",
 };
 
-export const formats = [
+export const homeHighlights = [
   {
-    name: "Hardcover",
-    detail: "The clothbound first edition   a book to be kept, given, and returned to. Printed on cream-toned pages with a sewn binding designed to last a lifetime.",
-    price: "£24.00",
+    title: "A Journey of Self-Discovery",
+    body: "Find meaning in the moments that change everything.",
   },
   {
-    name: "Paperback",
-    detail: "The trade paperback edition   the ideal companion for reading circles, morning devotionals, and anyone ready to carry Denise's story with them.",
-    price: "£12.00",
+    title: "Courage to Move Forward",
+    body: "Every ending is a chance for a new beginning.",
   },
   {
-    name: "eBook",
-    detail: "Available instantly across all major platforms. The Spirit of Love in digital format   searchable, shareable, and always within reach.",
-    price: "£6.99",
+    title: "New Beginnings, New You",
+    body: "Step into a future filled with purpose and possibility.",
   },
   {
-    name: "Audiobook",
-    detail: "Narrated with warmth and intention. Let Denise's story reach you through sound   ideal for long drives, early mornings, or quiet evenings.",
-    price: "£16.00",
-  },
-];
-
-export const testimonials = [
-  {
-    name: "Margaret L.",
-    role: "Spiritual Memoir Reader",
-    quote: "I read this book in two sittings. There is something in Denise's honesty that breaks something open in you   the kind of book that makes you want to call someone you love and say the things you have been keeping.",
-  },
-  {
-    name: "Pastor T. Reeves",
-    role: "Community Faith Leader",
-    quote: "The Spirit of Love is not a book about religion. It is a book about the kind of faith that survives everything   and what it teaches you when you finally arrive on the other side.",
-  },
-  {
-    name: "Rebecca Okafor",
-    role: "Clinical Counsellor",
-    quote: "This memoir gives language to experiences that many survivors have never been able to name. Denise writes about trauma, silence, and healing with a clarity that is both accessible and profound.",
+    title: "A Story That Stays With You",
+    body: "More than a book. It is an experience shaped by mystery, renewal, and hope.",
   },
 ];
 
 export const journey = [
   {
     step: "I",
-    title: "The Invitation",
-    body: "Born into a life that did not feel like her own, Denise enters the world already reaching for something she cannot name   a sense of purpose that arrives, quietly, in a moment of childhood crisis.",
+    title: "The Warning",
+    body: "Subtle signs gather around Robert before the crash, asking whether intuition and grace will be recognized in time.",
   },
   {
     step: "II",
-    title: "The Unravelling",
-    body: "Love, marriage, and motherhood bring structure, but beneath them, old wounds run deep. Betrayal arrives and cannot be unseen. Denise must choose between the life that is familiar and the life that is honest.",
+    title: "The Fall",
+    body: "A devastating accident shatters the visible world and opens a passage into memory, spirit, and unfinished debt.",
   },
   {
     step: "III",
     title: "The Reckoning",
-    body: "After loss, Denise begins to hear what grief is trying to teach her. She confronts the habits of silence and disappearance that once kept her safe   and discovers that awareness is the beginning of freedom.",
+    body: "Through connected lifetimes, Robert confronts the cost of ignored warnings, hidden temptation, and choices that echo forward.",
   },
   {
     step: "IV",
-    title: "The Return",
-    body: "At sixty-four, Denise chooses love again   not from desperation, but from wisdom. The black sheep becomes the chosen child. The dream world gives way to purpose, presence, and peace.",
+    title: "The New Door",
+    body: "Recovery becomes a final test of humility, repair, and the willingness to choose renewal over repetition.",
   },
 ];
 
 export const authorTimeline = [
   {
-    year: "2011",
-    title: "First Pages",
-    body: "The early drafts of what would become The Spirit of Love begin on quiet mornings, in the hours before Denise left for work. She had no plan for a book   only a need to understand the life she had lived.",
+    year: "Concept",
+    title: "A Story of Spiritual Thresholds",
+    body: "The book takes shape around a central question: what if survival was not the ending of a story, but the beginning of accountability?",
   },
   {
-    year: "2015",
-    title: "A Quiet Debut",
-    body: "Denise begins sharing fragments of her story with trusted friends and a small faith community. Their response   tears, recognition, and the words 'this is my story too'   confirms that what she is writing must be finished.",
+    year: "Structure",
+    title: "Layered Across Lifetimes",
+    body: "The manuscript evolves into a dramatic structure moving between present-day crisis, past-life narratives, and spiritual consequence.",
   },
   {
-    year: "2019",
-    title: "The Long Winter",
-    body: "Grief arrives with the illness and eventual passing of her second husband. Denise sets aside the manuscript and spends two years simply surviving. The writing resumes   deeper, truer, and without apology.",
+    year: "Tone",
+    title: "Darkness with Hope",
+    body: "The visual and emotional atmosphere is shaped around grief, warning, and renewal, with hope emerging as something earned.",
   },
   {
-    year: "2024",
-    title: "The Spirit of Love",
-    body: "Published by Miramax Books, The Spirit of Love is released as a memoir for survivors   for those who have lived in silence, in caregiving, and in the unshakeable belief that love and purpose are still possible.",
+    year: "Book",
+    title: "When One Door Opens",
+    body: "The finished work stands as a spiritual drama about choice, second chances, and the doors people open through love, fear, and faith.",
   },
 ];
 
 export const philosophy = [
   {
-    title: "Philosophy",
-    body: "Every wound, properly honoured, becomes wisdom. Denise writes from the belief that no part of a life   however painful   is wasted, and that the people who have suffered most quietly often have the most to offer the world.",
+    title: "Writing Lens",
+    body: "Stories matter most when they reveal how human choices shape both visible consequences and inner transformation.",
   },
   {
     title: "Mission",
-    body: "To reach every person who has survived something in silence and give them language, courage, and the knowledge that they are not alone. The Spirit of Love exists to remind its readers that their story is not finished.",
+    body: "To tell emotionally resonant fiction that explores grief, morality, faith, and the possibility of renewal without losing dramatic intensity.",
   },
   {
     title: "Vision",
-    body: "A world in which survivors speak   where faith is personal and expansive, where love is understood as an action rather than a feeling, and where no one mistakes their endurance for unworthiness.",
+    body: "To create stories that leave readers reflecting on responsibility, unseen grace, and the courage required to choose a better future.",
   },
 ];
 
-export const awards = [
+export const formats = [
   {
-    title: "Miramax Featured Title",
-    year: "2024",
-    body: "Selected as a lead title in Miramax Books' Spring 2024 list, recognising The Spirit of Love as a work of outstanding personal and spiritual significance.",
+    name: "Hardcover",
+    detail: "A collector-style physical edition suited to the book's darker, atmospheric tone and dramatic pacing.",
+    price: "TBD",
   },
   {
-    title: "Reader Circle Pick",
-    year: "2024",
-    body: "Chosen by the Reader Circle community as a monthly selection, featured in reading groups and faith communities across the United States.",
+    name: "Paperback",
+    detail: "A flexible print format for general readers, book clubs, and wider distribution.",
+    price: "TBD",
   },
   {
-    title: "Spiritual Memoir Shortlist",
-    year: "2025",
-    body: "Shortlisted for recognition in the annual spiritual memoir category, honouring books that speak honestly about faith, grief, and transformation.",
+    name: "eBook",
+    detail: "A digital edition for readers who want immediate access across phones, tablets, and e-readers.",
+    price: "TBD",
   },
-];
+  {
+    name: "Audiobook",
+    detail: "A future listening format well-suited to the emotional and spiritual intensity of the story.",
+    price: "TBD",
+  },
+] as const;
 
-export const chapters = [
+export const galleryImages = [
   {
-    number: "Part One",
-    title: "The Child Who Lived in a Dream",
-    body: "She looked toward the sky as a very young child and asked Jesus to take her back. Then she ran through the dark to save the ones she loved   and understood, without words, that she had been kept alive for something.",
+    src: "/sky.png",
+    alt: "Stormy sky suggesting spiritual transition and open horizons",
+    title: "Open Sky",
   },
   {
-    number: "Part Two",
-    title: "Learning to Survive",
-    body: "In the spaces between relatives' homes, school hallways, and the long hours before dawn at work, Denise learned the quiet power of discipline, faith, and a body that would not stop moving.",
+    src: "/when-one-door-opens-cover.png",
+    alt: "Current placeholder book cover for When One Door Opens",
+    title: "Current Book Image",
   },
   {
-    number: "Part Three",
-    title: "Love, Responsibility & Betrayal",
-    body: "She built a household on love and duty, became the breadwinner, the caregiver, the protector. And when she could no longer deny what was in front of her, she chose her daughter's safety over her own comfort.",
+    src: "asset:mist",
+    alt: "Misty landscape representing uncertainty and renewal",
+    title: "Misted Threshold",
   },
   {
-    number: "Part Four",
-    title: "The Life I Built",
-    body: "From financial independence to a second marriage that felt like a dream, Denise creates the belonging she had hungered for since childhood   and opens her home to a hundred family members, year after year.",
-  },
-];
-
-export const faq = [
-  {
-    q: "Is The Spirit of Love a novel or a memoir?",
-    a: "The Spirit of Love is a memoir   a true account of Stella Denise Solano's life, told chronologically from her earliest childhood memories through to the present day. It reads with the intimacy and pacing of literary prose, but every word is drawn from lived experience.",
+    src: "asset:library",
+    alt: "Dim library shelves evoking memory and hidden history",
+    title: "Memory Archive",
   },
   {
-    q: "Who is this book written for?",
-    a: "It was written for anyone who has survived something they have never found the words for   survivors of abandonment, grief, betrayal, or caregiving fatigue. It is also for those who have wondered whether faith and love are still possible after loss.",
+    src: "asset:desk",
+    alt: "Writing desk with letters and candlelight",
+    title: "The Writing Table",
   },
   {
-    q: "Is it suitable for reading groups and faith communities?",
-    a: "The Spirit of Love is organised across six parts and twenty-five chapters, plus a prologue and epilogue. It is well-suited to reading groups, faith communities, and counselling or recovery circles. A discussion guide is available on request.",
-  },
-  {
-    q: "Does the book discuss faith and spirituality?",
-    a: "Deeply. Denise's spiritual life is central to the memoir   from her Catholic upbringing to her evolving personal relationship with God, Jesus, angels, and what she calls 'the other side.' The book speaks honestly about one woman's living faith without prescribing a single tradition.",
-  },
-  {
-    q: "Where can I purchase a signed copy?",
-    a: "Signed copies are available through the contact page. Postal signings are offered subject to availability, and Denise occasionally attends reader events and book club gatherings. Use the contact form to enquire directly.",
+    src: "asset:reading-room",
+    alt: "Quiet reading room with moody light",
+    title: "Stillness",
   },
 ];
 
 export const contact = {
-  email: "info@miramaxbooks.com",
-  phone: "332-213-1534",
-  agent: "Miramax Books",
-  responseTime: "Within 3–5 working days",
-  location: "California, United States",
+  email: "contact@example.com",
+  phone: "(000) 000-0000",
+  agent: "Author Representative",
+  responseTime: "Within 2-4 business days",
+  location: "United States",
 };
 
 export const contactFaq = [
   {
-    q: "Do you accept speaking invitations?",
-    a: "Yes. Stella Denise Solano accepts selected speaking invitations for faith communities, survivor support groups, literary events, and women's conferences. Please use the contact form to submit your invitation with the event date and full details.",
+    q: "Are speaking or interview requests welcome?",
+    a: "Yes. Use the contact form to share the event, audience, and preferred dates, and we can respond with availability.",
   },
   {
-    q: "Can you sign a copy by post?",
-    a: "Signed copies can be arranged by post. Please contact us with your full mailing address and the inscription you would like. Requests are fulfilled within two to three weeks, subject to availability.",
+    q: "Can this website be updated with a final book cover later?",
+    a: "Yes. The current home page uses a placeholder image, and the final artwork can be swapped in easily once provided.",
   },
   {
-    q: "Are book club visits possible?",
-    a: "Book club visits   in person or via video call   are warmly welcomed. Denise particularly enjoys conversations with reading circles, faith groups, and healing communities. Contact us with your group's size and preferred date to check availability.",
+    q: "Is When One Door Opens part of a series?",
+    a: "At present it is presented as a standalone spiritual drama centered on Robert's journey through consequence, renewal, and choice.",
   },
 ];
 
 export const reviews = [
   {
-    name: "Margaret D.",
-    source: "Advance Reader Review",
-    quote: "A memoir that does not flinch. Denise writes about her life the way only a survivor can   with the kind of honesty that makes you feel less alone in your own story.",
+    name: "Editorial Impression",
+    source: "Story Positioning",
+    quote: "A layered spiritual drama where second chances feel costly, meaningful, and emotionally earned.",
   },
   {
-    name: "T. Reeves",
-    source: "Faith & Letters Review",
-    quote: "Rare and important. The Spirit of Love belongs on the shelf beside every memoir that has ever changed how you see yourself and the people who raised you.",
+    name: "Theme Focus",
+    source: "Book Direction",
+    quote: "The novel stands out by treating destiny as atmosphere, not excuse, and responsibility as the deepest emotional test.",
   },
   {
-    name: "R. Okafor",
-    source: "Healing Reads",
-    quote: "This is the book someone hands you when you have run out of words for what you have been through   and it gives them back.",
+    name: "Reader Promise",
+    source: "Audience Appeal",
+    quote: "Ideal for readers drawn to faith-tinged suspense, personal reckoning, and stories of renewal after devastation.",
   },
 ];
 
-export const genres = ["Memoir", "Spiritual", "Inspirational", "Self-Discovery"];
+export const genres = ["Spiritual Drama", "Contemporary Fiction", "Mystery", "Redemption"];
+
+export const chapters = [
+  {
+    number: "Part One",
+    title: "The Door Before the Fall",
+    body: "Robert's life in Denver is marked by separation, prayer, warnings, and small mercies before a flight changes everything.",
+  },
+  {
+    number: "Part Two",
+    title: "Between Life and Death",
+    body: "A crash leaves Robert suspended in a coma while the physical world fights to save him and the spiritual world demands an answer.",
+  },
+  {
+    number: "Part Three",
+    title: "The First Debt",
+    body: "An earlier lifetime reveals the origin of a spiritual debt and the bond that has crossed death more than once.",
+  },
+  {
+    number: "Part Four",
+    title: "Lives of Choice and Consequence",
+    body: "Past identities expose temptation, moral decline, love, secrecy, and the repeated cost of ignored guidance.",
+  },
+];
+
+export const faq = [
+  {
+    q: "What kind of story is When One Door Opens?",
+    a: "It is a spiritual drama that combines contemporary emotional conflict with supernatural mystery, past-life revelation, and moral reckoning.",
+  },
+  {
+    q: "Is the novel faith-based?",
+    a: "Faith and spiritual guidance are central to the story, but the novel is written as dramatic fiction rather than devotional instruction.",
+  },
+  {
+    q: "What is the emotional core of the book?",
+    a: "At its center, the novel is about consequence, second chances, family pain, and whether a person can choose renewal after deep loss.",
+  },
+  {
+    q: "Who is the main character?",
+    a: "Robert is the central figure, but the novel expands his story through connected lives and spiritual relationships that deepen the stakes.",
+  },
+  {
+    q: "Will the website include final cover art later?",
+    a: "Yes. The current site keeps a placeholder image in place so the final cover can be added smoothly once it is available.",
+  },
+];
 
 export const books = [
   {
-    title: "The Spirit of Love",
-    slug: "the-spirit-of-love",
-    year: "2024",
-    tag: "A Memoir",
-    body: "A raw and redemptive memoir about surviving what no one speaks aloud   and choosing love, again and again, until it finally stays.",
+    title: site.bookTitle,
+    slug: "when-one-door-opens",
+    year: "Upcoming",
+    tag: "Spiritual Drama",
+    body: "A story of grief, warning, destiny, and free will set against a devastating crash and the unseen lives beyond it.",
     description: [
-      "The Spirit of Love is the memoir of Stella Denise Solano   a woman who grew up on a California ranch, shuttled between relatives, and learned to disappear emotionally before she understood what survival meant. It begins with a child looking toward the sky and asking Jesus to take her back, and ends with a woman of sixty-four who no longer wants to leave.",
-      "Across six parts and twenty-five chapters, Denise recounts her life with unflinching honesty   her first marriage and its devastating betrayal, her second marriage and its extraordinary love, the grief of widowhood, and the long journey back to herself through prayer, movement, caregiving, and faith. She writes with the directness of someone who has finally found the language for the things she once had to carry in silence.",
-      "This is a memoir for survivors   for those who have been sent away, overlooked, or made to feel unworthy of love. Denise offers not comfort, but truth: that every wound has something to teach, that faith does not require perfection, and that the spirit of love does not abandon the people who keep choosing it.",
+      "When One Door Opens follows Robert, an operating-room nurse whose life is already under pressure when a plane crash places him in a prolonged coma and opens the way to a deeper spiritual reckoning.",
+      "As Robert moves through the threshold between life and death, he experiences connected lives that uncover a long-running debt, repeated temptation, and the cost of choices that were never fully faced.",
+      "The novel returns to the present with a powerful question: if a person is given another chance, will he repeat the old pattern, or finally walk through the better door?",
     ],
-    amazonLink: "https://www.amazon.com/dp/example1",
-  },
-  {
-    title: "Whispers of the Heart",
-    slug: "whispers-of-the-heart",
-    year: "2021",
-    tag: "A Novella",
-    body: "A companion novella exploring the letters Denise never sent   to the people she loved, lost, and is still learning to forgive.",
-    description: [
-      "Whispers of the Heart is a companion novella that explores what Denise calls 'the letters I never sent'   an intimate meditation on love, memory, and the quiet courage it takes to remain open after repeated loss.",
-      "Written between the events of Part Three and Part Four of The Spirit of Love, this novella follows a woman in the middle years of her life who begins composing letters to the people she has loved: a mother she never fully understood, a husband who disappeared in plain sight, and a daughter she is trying to protect from the same silences that shaped her own childhood.",
-      "Lyrical and precise, Whispers of the Heart is a book about what we say when we finally decide to speak   and the surprising grace that arrives when we stop waiting for permission.",
-    ],
-    amazonLink: "https://www.amazon.com/dp/example2",
-  },
-  {
-    title: "Letters to Tomorrow",
-    slug: "letters-to-tomorrow",
-    year: "2018",
-    tag: "Short Reflections",
-    body: "A collection of quiet meditations written during a decade of loss and rebuilding   on faith, grief, the body's memory, and what we leave behind.",
-    description: [
-      "Letters to Tomorrow is a collection of short reflective essays and meditations written across a decade of Denise's life. These are the quiet pieces she set down during the years she later writes about in The Spirit of Love   in the margins of grief, in the hours before work, in the spaces between one version of herself and the next.",
-      "Each piece is brief and direct. Some address God. Some address her daughter or her grandchild. Some address the people who hurt her, or the version of herself she is trying to leave behind. Together, they form a fragmented portrait of a woman in the process of becoming.",
-      "Letters to Tomorrow is the right starting point for readers new to Denise's work, and a deeper companion for those who have already read The Spirit of Love. It is a book for the early morning   for the quiet hours when you need a voice that knows what endurance truly costs.",
-    ],
-    amazonLink: "https://www.amazon.com/dp/example3",
+    amazonLink: "#",
   },
 ];
