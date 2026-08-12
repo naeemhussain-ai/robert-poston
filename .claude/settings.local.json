@@ -21,7 +21,14 @@
       "Bash(vercel link *)",
       "Bash(vercel --prod --yes)",
       "Bash(cp \"c:/Users/Administrator/Downloads/WhatsApp Image 2026-08-07 at 2.39.04 AM.jpeg\" \"C:/Users/Administrator/Desktop/TechGenics/spirit-of-design/public/stella-portrait.jpg\")",
-      "Bash(cp \"c:/Users/Administrator/Downloads/ChatGPT Image Aug 7, 2026, 10_48_00 PM.png\" \"C:/Users/Administrator/Desktop/TechGenics/spirit-of-design/public/book-cover.png\")"
+      "Bash(cp \"c:/Users/Administrator/Downloads/ChatGPT Image Aug 7, 2026, 10_48_00 PM.png\" \"C:/Users/Administrator/Desktop/TechGenics/spirit-of-design/public/book-cover.png\")",
+      "Bash(vercel *)",
+      "Bash(git commit *)",
+      "Read(//c/Users/Administrator/.local/share/com.vercel.cli/**)",
+      "Read(//c/Users/Administrator/.config/vercel/**)",
+      "Read(//c/Users/Administrator/AppData/Roaming/com.vercel.cli/**)",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

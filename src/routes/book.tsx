@@ -9,16 +9,19 @@ import {
   StaggerItem,
   WordReveal,
 } from "@/components/lux";
-import { CtaBanner } from "@/components/sections/shared";
+import { CtaBanner, QuoteBlock } from "@/components/sections/shared";
 import {
+  bookQuote,
+  chapters,
   faq,
   featuredQuote,
   genres,
   hero,
+  reviews,
   site,
   synopsis,
   themes,
-  chapters,
+  whyIWrote,
 } from "@/data/content";
 import {
   Accordion,
@@ -140,11 +143,11 @@ function EditorialNote() {
   return (
     <Section className="bg-background">
       <Reveal className="mx-auto max-w-4xl p-10 text-center sm:p-14">
-        <p className="eyebrow">Editorial Note</p>
+        <p className="eyebrow">{whyIWrote.eyebrow}</p>
         <h2 className="display mt-6 text-4xl sm:text-5xl">{featuredQuote.text}</h2>
         <GoldDivider className="mt-8" />
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-          This section now gives the client a focused book page where summary, themes, structure, and final positioning all live in one place without the previous multi-book setup.
+          {whyIWrote.paragraphs[0]}
         </p>
       </Reveal>
     </Section>
@@ -198,6 +201,7 @@ export function BookPage() {
     <>
       <BookHero />
       <Summary />
+      <QuoteBlock text={bookQuote.text} attribution={bookQuote.attribution} />
       <ThemeCards />
       <Structure />
       <EditorialNote />

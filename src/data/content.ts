@@ -55,9 +55,9 @@ export const synopsis = {
   eyebrow: "Book Summary",
   heading: "A crash, a coma, and the lives waiting behind the next door",
   paragraphs: [
-    "When One Door Opens centers on Robert, an operating-room nurse in Denver who is still trying to rebuild his life after divorce, distance from his children, and years of quiet emotional strain. Just as companionship and fragile hope begin to return, a small-plane crash leaves him gravely injured and suspended between life and death.",
-    "Inside that threshold, Robert experiences a chain of connected lives stretching across decades and spiritual debts. He is drawn through earlier identities, father-son bonds, moral failures, and warnings ignored, slowly realizing that pain may repeat across lifetimes when truth, gratitude, and responsibility are refused.",
-    "As Robert awakens, the novel shifts from mystery to reckoning. Recovery becomes more than survival: it becomes a test of humility, repair, and free will. The question at the center of the story is not whether fate exists, but whether a person will finally choose the better door once it opens.",
+    "When One Door Opens follows an ordinary man struggling with divorce and self-identity   a person who comes across as ungrateful while quietly falling apart. Just as fragile hope begins to return, a small-plane crash puts him on life support and into a coma that lasts nearly four months.",
+    "Inside that threshold, he leaves his body and enters the afterlife, where he discovers a generational curse he acquired in a past life   one he must work to break. He is guided by a spirit named Orin, a soul he had a close relationship with in a previous life who is also entangled in the curse. He also moves through the lives he could have lived, learning firsthand that the grass is not always greener on the other side.",
+    "The story builds toward a subtle and satisfying ending in which the main character accepts gratitude and chooses a more nurturing relationship, prioritizing his children and the people he loves over the things he only wished he had. The question at the center is not whether fate exists, but whether a person will finally choose the better door once it opens.",
   ],
   cta: "Read About the Book",
 };
@@ -67,17 +67,33 @@ export const featuredQuote = {
   attribution: site.bookTitle,
 };
 
+export const bookQuote = {
+  text: "The people you love become ghosts inside of you and like this you keep them alive.",
+  attribution: "The Stanley Hotel, Estes Park, Colorado",
+};
+
+export const whyIWrote = {
+  eyebrow: "A Message from the Author",
+  heading: 'Why I Wrote "When One Door Opens"',
+  paragraphs: [
+    "Over the years, I have carried a deep curiosity about the possibility of a world beyond our own. The book explores that idea through an ordinary person who faces experiences I believe any of us could encounter, whether we recognize them or not.",
+    "The story reflects the battle within us   not one of flesh and blood, but one between good and evil. I believe life continues beyond death, and that death is not truly the end. Through suspense and emotion, the book follows a man guided by a guardian angel while struggling against a generational curse placed on his family long before him.",
+    "I feel as though the book hits several twists and turns of emotion but ultimately ends with a subtle resolution that will leave any reader satisfied. My goal was to design this story as an easy read that would also leave the reader thinking, as I have thought about for so many years. My hope is to make that connection.",
+  ],
+};
+
 export const authorBio = {
   eyebrow: "The Author",
   name: site.author,
   short: [
-    "Robert Poston writes fiction rooted in spiritual tension, emotional consequence, and the life-changing weight of ordinary human choices. His storytelling blends intimate personal struggle with expansive questions about faith, destiny, and moral accountability.",
-    "In When One Door Opens, Robert builds a dramatic world that moves across time, memory, and the unseen realm while keeping its emotional center grounded in family, grief, love, and redemption.",
+    "My name is Robert Poston. Born in 1970, I grew up in a town twelve miles east of Los Angeles. We did not have much, but we made the most of what we had. I lived with my mother, father, and brother. Even then, I was empathetic and known more as a listener than a talker. I did not have many friends, and my parents and close relatives often saw me as more mature than other children my age.",
+    "After the military, my career in healthcare began as a surgical technician before I earned my nursing degree. I have always felt a calling to help people, especially those in vulnerable moments. It is rewarding to watch patients recover from their illness and to be present as a source of support during their healing.",
   ],
   long: [
-    "Robert Poston is the author of When One Door Opens, a spiritual drama shaped by questions of free will, unseen guidance, and the emotional cost of the choices people live with long after the moment has passed. His work is drawn toward characters standing at thresholds: between hope and despair, certainty and warning, life and whatever waits beyond it.",
-    "His storytelling voice favors emotionally direct scenes, moral tension, and layered timelines that gradually reveal how the past keeps pressing on the present. Rather than treating the spiritual world as abstraction, Robert uses it as a dramatic force that illuminates human weakness, longing, courage, and responsibility.",
-    "When One Door Opens reflects his interest in stories where renewal is possible but never automatic. Redemption in his work is not handed out lightly; it has to be chosen, often after grief, consequence, and painful self-recognition. That perspective gives the novel its darker atmosphere as well as its sense of earned hope.",
+    "My name is Robert Poston. As a child, I sometimes experienced things I could not explain. Growing up with my brother, my parents, and even friends, I often felt like the odd one out. I might dream that someone would become ill, or sense how someone was feeling before they even spoke. To others, this sometimes made me seem overly critical, but I later understood it as empathy. Looking back, I believe healthcare was where I was meant to be. Understanding people came naturally to me, and I have learned that when something is meant for us, it often unfolds more easily when we trust our intuition.",
+    "I did not have many friends growing up. Being told I was wise beyond my years often separated me from others my age instead of bringing us closer. I spent much of my time observing people and wondering why they acted or thought the way they did. I was always drawn to the idea of purpose and believed that things happened for a reason. I also believed that each of us faced challenges we were meant to overcome.",
+    "In high school, my parents encouraged me to join the military after graduation or move out when I turned eighteen. Although I wanted to attend college right away, I chose the military and used the experience to learn more about how people interact and cope with uncertainty, including myself.",
+    "Later, after building a family and facing life's challenges, I came to believe that each new day offers a lesson. Whether people cope through faith or struggle with harmful ways of escaping pain, I have learned that we have more in common than we often realize. Today, I live in Texas, work as a nurse helping others, and enjoy writing.",
   ],
   cta: "Read the Author Story",
 };

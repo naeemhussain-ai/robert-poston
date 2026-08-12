@@ -10,7 +10,7 @@ import {
   WordReveal,
 } from "@/components/lux";
 import { QuoteBlock, TimelineSection } from "@/components/sections/shared";
-import { authorBio, authorTimeline, philosophy, site } from "@/data/content";
+import { authorBio, authorTimeline, bookQuote, philosophy, site, whyIWrote } from "@/data/content";
 import deskImg from "@/assets/desk.jpg";
 import { withBase } from "@/lib/asset-path";
 
@@ -112,12 +112,29 @@ function WritingTable() {
         <div>
           <SectionHeading align="left" eyebrow="Creative Atmosphere" title="Stories written at the edge of warning and grace" />
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            This author page now supports a darker, more reflective presentation that fits the spiritual-drama tone of the new book. It can easily absorb fuller biography details, press material, or a personal note from the author later.
+            Writing grew naturally out of a lifetime of observation. Robert spent his childhood and adult years watching people, wondering why they acted the way they did, and sensing things others often overlooked. That empathetic attention became the foundation of his storytelling.
           </p>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            If you share a final portrait or any author-specific media, we can replace the current placeholder visuals without changing the page structure.
+            Living in Texas today, Robert continues to draw on his dual life as a nurse and a writer. The work of healing people informed the themes of When One Door Opens more than anything else   the proximity to vulnerability, recovery, and the will to keep going.
           </p>
         </div>
+      </div>
+    </Section>
+  );
+}
+
+function WhyIWrote() {
+  return (
+    <Section className="bg-background">
+      <div className="mx-auto max-w-3xl">
+        <SectionHeading align="left" eyebrow={whyIWrote.eyebrow} title={whyIWrote.heading} />
+        {whyIWrote.paragraphs.map((paragraph, index) => (
+          <Reveal key={index} delay={index * 0.06}>
+            <p className={`mt-8 text-lg leading-[1.9] text-foreground/80 ${index === 0 ? "dropcap" : ""}`}>
+              {paragraph}
+            </p>
+          </Reveal>
+        ))}
       </div>
     </Section>
   );
@@ -128,10 +145,8 @@ export function AboutPage() {
     <>
       <AboutHero />
       <Biography />
-      <QuoteBlock
-        text="Renewal matters because consequence matters. A second chance only means something when a person chooses differently."
-        attribution={site.author}
-      />
+      <WhyIWrote />
+      <QuoteBlock text={bookQuote.text} attribution={bookQuote.attribution} />
       <TimelineSection eyebrow="Development" title="How the author vision takes shape" items={authorTimeline} />
       <WritingTable />
     </>
