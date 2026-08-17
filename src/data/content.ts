@@ -11,10 +11,10 @@ export const site = {
 
 export const nav = [
   { label: "Home", to: "/" },
-  { label: "About the Author", to: "/" },
-  { label: "About the Book", to: "/" },
-  { label: "Gallery", to: "/" },
-  { label: "Contact", to: "/" },
+  { label: "About the Author", to: "/about" },
+  { label: "About the Book", to: "/book" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Contact", to: "/contact" },
 ] as const;
 
 export const socials = [

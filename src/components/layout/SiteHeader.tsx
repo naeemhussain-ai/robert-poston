@@ -74,7 +74,7 @@ export function SiteHeader() {
               variant="outline"
               className="rounded-xl border-gold/60 bg-transparent px-5 text-[0.68rem] uppercase tracking-[0.18em] text-gold hover:bg-gold/10 hover:text-gold sm:px-6 sm:text-[0.72rem]"
             >
-              <Link to="/">Get Your Copy</Link>
+              <Link to="/book">Get Your Copy</Link>
             </Button>
           </Magnetic>
 
@@ -117,7 +117,7 @@ export function SiteHeader() {
                       transition={{ delay: 0.5, duration: 0.8 }}
                     >
                       <Button asChild className="mt-6 w-full rounded-full">
-                        <Link to="/">Get Your Copy</Link>
+                        <Link to="/book">Get Your Copy</Link>
                       </Button>
                     </motion.div>
                   </motion.nav>

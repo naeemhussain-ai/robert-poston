@@ -14,7 +14,7 @@ import { authorBio, authorTimeline, featuredQuote, philosophy, site, whyIWrote }
 import deskImg from "@/assets/desk.jpg";
 import { withBase } from "@/lib/asset-path";
 
-const portrait = withBase("/author-portrait.jpg");
+const portrait = withBase("/author-portrait-home.jpg");
 
 function AboutHero() {
   return (

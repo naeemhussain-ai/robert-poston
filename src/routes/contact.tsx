@@ -47,7 +47,6 @@ type FormValues = z.infer<typeof schema>;
 
 const details = [
   { icon: Mail, label: "Email", value: contact.email },
-  { icon: Phone, label: "Phone", value: contact.phone },
   { icon: UserRound, label: "Representative", value: contact.agent },
   { icon: Clock, label: "Response Time", value: contact.responseTime },
 ] as const;
