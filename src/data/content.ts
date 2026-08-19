@@ -203,34 +203,32 @@ export const formats = [
 
 export const galleryImages = [
   {
-    src: "/sky.png",
-    alt: "Stormy sky suggesting spiritual transition and open horizons",
-    title: "Open Sky",
+    src: "/grace.jpeg",
   },
   {
     src: "/when-one-door-opens-cover.png",
-    alt: "Current placeholder book cover for When One Door Opens",
-    title: "Current Book Image",
+
   },
   {
-    src: "asset:mist",
-    alt: "Misty landscape representing uncertainty and renewal",
-    title: "Misted Threshold",
+    src: "/group1.jpeg",
   },
   {
-    src: "asset:library",
-    alt: "Dim library shelves evoking memory and hidden history",
-    title: "Memory Archive",
+    src: "/sea sunset.jpeg",
   },
   {
-    src: "asset:desk",
-    alt: "Writing desk with letters and candlelight",
-    title: "The Writing Table",
+    src: "/pets.jpeg",
   },
   {
-    src: "asset:reading-room",
-    alt: "Quiet reading room with moody light",
-    title: "Stillness",
+    src: "/group2.jpeg",
+  },
+  {
+    src: "/picture on chair.jpeg",
+  },
+  {
+    src: "/stone.jpeg",
+  },
+  {
+    src: "/building.jpeg",
   },
 ];
 
